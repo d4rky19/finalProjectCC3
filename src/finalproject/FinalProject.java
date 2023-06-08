@@ -15,7 +15,9 @@ public class FinalProject {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Update 1:11am");
+        Menu m = new Menu();
+        m.setVisible(true);
+        
     }
     
 }
