@@ -9,6 +9,7 @@ package finalproject;
  * @author selwyn
  */
 public class FinalProject {
+    
 
     /**
      * @param args the command line arguments
@@ -17,6 +18,7 @@ public class FinalProject {
         // TODO code application logic here
         Menu m = new Menu();
         m.setVisible(true);
+      
         
     }
     
