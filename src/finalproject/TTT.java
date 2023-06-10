@@ -64,6 +64,10 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            
+            b1.setBackground(Color.red);
+            b2.setBackground(Color.red);
+            b3.setBackground(Color.red);
             moveCount = 0;
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
@@ -95,6 +99,10 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            
+            b4.setBackground(Color.red);
+            b5.setBackground(Color.red);
+            b6.setBackground(Color.red);
             moveCount = 0;
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
@@ -126,6 +134,9 @@ public class TTT extends javax.swing.JFrame {
             b8.setText(""); 
             b9.setText("");
             moveCount = 0;
+            b7.setBackground(Color.red);
+            b8.setBackground(Color.red);
+            b9.setBackground(Color.red);
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -155,6 +166,9 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b1.setBackground(Color.red);
+            b4.setBackground(Color.red);
+            b7.setBackground(Color.red);
             moveCount = 0;
         }else if (moveCount ==9){
            jLabel1.setText("DRAW!");
@@ -185,6 +199,9 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b2.setBackground(Color.red);
+            b5.setBackground(Color.red);
+            b8.setBackground(Color.red);
             moveCount = 0;
         }else if (moveCount ==9){
            jLabel1.setText("DRAW!");
@@ -215,6 +232,9 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b3.setBackground(Color.red);
+            b6.setBackground(Color.red);
+            b9.setBackground(Color.red);
             moveCount = 0;
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
@@ -245,6 +265,9 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b1.setBackground(Color.red);
+            b5.setBackground(Color.red);
+            b9.setBackground(Color.red);
             moveCount = 0;
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
@@ -275,6 +298,9 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b3.setBackground(Color.red);
+            b5.setBackground(Color.red);
+            b7.setBackground(Color.red);
             moveCount = 0;
         }else if (moveCount ==9){
            jLabel1.setText("DRAW!");
@@ -305,6 +331,9 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b1.setBackground(Color.blue);
+            b2.setBackground(Color.blue);
+            b3.setBackground(Color.blue);
             moveCount = 0;
             
         } else if (moveCount ==9){
@@ -335,6 +364,9 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b4.setBackground(Color.blue);
+            b5.setBackground(Color.blue);
+            b6.setBackground(Color.blue);
             moveCount = 0;
         }else if (moveCount ==9){
            jLabel1.setText("DRAW!");
@@ -347,6 +379,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+             
             moveCount = 0;
             
             
@@ -364,6 +397,10 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b7.setBackground(Color.blue);
+            b8.setBackground(Color.blue);
+            b9.setBackground(Color.blue);
+            
             moveCount = 0;
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
@@ -392,6 +429,9 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b1.setBackground(Color.blue);
+            b4.setBackground(Color.blue);
+            b7.setBackground(Color.blue);
             moveCount = 0;
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
@@ -421,6 +461,9 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b2.setBackground(Color.blue);
+            b5.setBackground(Color.blue);
+            b8.setBackground(Color.blue);
             moveCount = 0;
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
@@ -449,6 +492,9 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b3.setBackground(Color.blue);
+            b6.setBackground(Color.blue);
+            b9.setBackground(Color.blue);
             moveCount = 0;
         }else if (moveCount ==9){
            
@@ -479,6 +525,9 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b1.setBackground(Color.blue);
+            b5.setBackground(Color.blue);
+            b9.setBackground(Color.blue);
             moveCount = 0;
         }else if (moveCount ==9){
            jLabel1.setText("DRAW!");
@@ -508,6 +557,9 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            b3.setBackground(Color.blue);
+            b5.setBackground(Color.blue);
+            b7.setBackground(Color.blue);
             moveCount = 0;
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
@@ -526,10 +578,19 @@ public class TTT extends javax.swing.JFrame {
         }
         
     }
-   
-    private void draw(){
-        
+    private void reset(){
+        b1.setBackground(null);
+        b2.setBackground(null);
+        b3.setBackground(null);
+        b4.setBackground(null);
+        b5.setBackground(null);
+        b6.setBackground(null);
+        b7.setBackground(null);
+        b8.setBackground(null);
+        b9.setBackground(null);
     }
+   
+   
         
         
 
@@ -707,10 +768,14 @@ public class TTT extends javax.swing.JFrame {
         b1.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b1.setForeground(Color.red);
+             reset();
             
         } else {
             b1.setForeground(Color.blue);
-        }     
+             reset();
+        } 
+        
+        
         choosePlayer();
         winner();// TODO add your handling code here:
         
@@ -721,9 +786,11 @@ public class TTT extends javax.swing.JFrame {
 moveCount += 1;        b2.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b2.setForeground(Color.red);
+             reset();
             
         } else {
             b2.setForeground(Color.blue);
+             reset();
         }      
          choosePlayer();winner(); 
     }//GEN-LAST:event_b2ActionPerformed
@@ -732,9 +799,11 @@ moveCount += 1;        b2.setText(startGame);
  moveCount += 1;       b3.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b3.setForeground(Color.red);
+             reset();
             
         } else {
             b3.setForeground(Color.blue);
+             reset();
         }      
          choosePlayer();
          winner(); 
@@ -744,9 +813,11 @@ moveCount += 1;        b2.setText(startGame);
  moveCount += 1;       b4.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b4.setForeground(Color.red);
+             reset();
             
         } else {
             b4.setForeground(Color.blue);
+             reset();
         }      
          choosePlayer();winner(); 
     }//GEN-LAST:event_b4ActionPerformed
@@ -755,9 +826,11 @@ moveCount += 1;        b2.setText(startGame);
  moveCount += 1;       b5.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b5.setForeground(Color.red);
+             reset();
             
         } else {
             b5.setForeground(Color.blue);
+             reset();
         }      
          choosePlayer();winner(); 
     }//GEN-LAST:event_b5ActionPerformed
@@ -766,9 +839,11 @@ moveCount += 1;        b2.setText(startGame);
  moveCount += 1;       b6.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b6.setForeground(Color.red);
+             reset();
             
         } else {
             b6.setForeground(Color.blue);
+             reset();
         }      
          choosePlayer();winner(); 
     }//GEN-LAST:event_b6ActionPerformed
@@ -777,9 +852,11 @@ moveCount += 1;        b2.setText(startGame);
     moveCount += 1;     b7.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b7.setForeground(Color.red);
+             reset();
             
         } else {
             b7.setForeground(Color.blue);
+             reset();
         }      
          choosePlayer();winner();
     }//GEN-LAST:event_b7ActionPerformed
@@ -788,9 +865,11 @@ moveCount += 1;        b2.setText(startGame);
    moveCount += 1;    b8.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b8.setForeground(Color.red);
+             reset();
             
         } else {
             b8.setForeground(Color.blue);
+             reset();
         }      
          choosePlayer();winner(); 
     }//GEN-LAST:event_b8ActionPerformed
@@ -799,9 +878,11 @@ moveCount += 1;        b2.setText(startGame);
  moveCount += 1;       b9.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b9.setForeground(Color.red);
+             reset();
             
         } else {
             b9.setForeground(Color.blue);
+             reset();
         }      
          choosePlayer();winner(); 
     }//GEN-LAST:event_b9ActionPerformed
