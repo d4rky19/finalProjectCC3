@@ -15,6 +15,7 @@ public class TTT extends javax.swing.JFrame {
     private String startGame = "X";
     private int xCount = 0;
     private int oCount = 0;
+    private int moveCount = 0;
     
 
     /**
@@ -36,6 +37,7 @@ public class TTT extends javax.swing.JFrame {
         } else {
             startGame = "X";
         }
+        
     }
     private void winner(){
         String bt1 = b1.getText();
@@ -48,91 +50,485 @@ public class TTT extends javax.swing.JFrame {
         String bt8 = b8.getText();
         String bt9 = b9.getText();
         
+       
         if (bt1.equals("X") && bt2.equals("X") && bt3.equals("X")) {
             jLabel1.setText("X WINS!");
             xCount++;
             gameScore();
-        } 
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+            jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+            
+        
+        }
         
         if(bt4.equals("X") && bt5.equals("X") && bt6.equals("X")){
              jLabel1.setText("X WINS!");
             xCount++;
             gameScore();
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+            jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+            
+        
         }
         if(bt7.equals("X") && bt8.equals("X") && bt9.equals("X")){
              jLabel1.setText("X WINS!");
             xCount++;
             gameScore();
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+            jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+            
+        
         }
         if(bt1.equals("X") && bt4.equals("X") && bt7.equals("X")){
              jLabel1.setText("X WINS!");
             xCount++;
             gameScore();
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+           jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+            
+        
         }
         if(bt2.equals("X") && bt5.equals("X") && bt8.equals("X")){
              jLabel1.setText("X WINS!");
             xCount++;
             gameScore();
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+           jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+            
+        
         }
         if(bt3.equals("X") && bt6.equals("X") && bt9.equals("X")){
              jLabel1.setText("X WINS!");
             xCount++;
             gameScore();
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+            jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+            
+        
         }
         if(bt1.equals("X") && bt5.equals("X") && bt9.equals("X")){
             jLabel1.setText("X WINS!");
             xCount++;
             gameScore();
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+            jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+            
+        
         }
         if(bt3.equals("X") && bt5.equals("X") && bt7.equals("X")){
             jLabel1.setText("X WINS!");
             xCount++;
             gameScore();
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+           jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+            
+        
         }
         if (bt1.equals("O") && bt2.equals("O") && bt3.equals("O")) {
             jLabel1.setText("O WINS!");
             oCount++;
             gameScore();
-        } 
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+        } else if (moveCount ==9){
+            jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+            
+        
+        }
         if(bt4.equals("O") && bt5.equals("O") && bt6.equals("O")){
             jLabel1.setText("O WINS!");
             oCount++;
-            gameScore();
+            gameScore();b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+           jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+            
+        
         }
         if(bt7.equals("O") && bt8.equals("O") && bt9.equals("O")){
             jLabel1.setText("O WINS!");
             oCount++;
-            gameScore();
+            gameScore();b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+            jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+        
         }
         if(bt1.equals("O") && bt4.equals("O") && bt7.equals("O")){
             jLabel1.setText("O WINS!");
             oCount++;
-            gameScore();
+            gameScore();b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+            jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+            
+        
         }
         if(bt2.equals("O") && bt5.equals("O") && bt8.equals("O")){
             jLabel1.setText("O WINS!");
             oCount++;
-            gameScore();
+            gameScore();b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+            jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+        
         }
         if(bt3.equals("O") && bt6.equals("O") && bt9.equals("O")){
             jLabel1.setText("O WINS!");
             oCount++;
-            gameScore();
+            gameScore();b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+           
+            jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+            
+        
         }
         if(bt1.equals("O") && bt5.equals("O") && bt9.equals("O")){
             jLabel1.setText("O WINS!");
             oCount++;
-            gameScore();
+            gameScore();b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+           jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
+        
         }
         if(bt3.equals("O") && bt5.equals("O") && bt7.equals("O")){
            jLabel1.setText("O WINS!");
             oCount++;
             gameScore();
-        }
-    }
-    private void limiter(){
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+        }else if (moveCount ==9){
+            jLabel1.setText("DRAW!");
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
+            
         
-      
+        }
+        
+    }
+   
+    private void draw(){
+        
     }
         
         
@@ -157,19 +553,17 @@ public class TTT extends javax.swing.JFrame {
         b6 = new javax.swing.JButton();
         jblPlayerX = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jblPlayerO = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jSpinner1 = new javax.swing.JSpinner();
         jLabel4 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(734, 520));
-        setPreferredSize(new java.awt.Dimension(790, 520));
+        setPreferredSize(new java.awt.Dimension(790, 535));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -247,20 +641,16 @@ public class TTT extends javax.swing.JFrame {
 
         jblPlayerX.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jblPlayerX.setText("0");
-        getContentPane().add(jblPlayerX, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 66, 62));
+        getContentPane().add(jblPlayerX, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 220, 66, 62));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, 197, 68));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("SET WINNING SCORE");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 150, 45));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, 197, 68));
 
         jblPlayerO.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jblPlayerO.setText("0");
-        getContentPane().add(jblPlayerO, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, 66, 62));
+        getContentPane().add(jblPlayerO, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 270, 66, 62));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 102, 102));
         jButton1.setText("RESET SCORE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -268,7 +658,7 @@ public class TTT extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 280, 130, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 110, 40));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 102, 102));
@@ -278,11 +668,7 @@ public class TTT extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 104, 44));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel3.setText("PLAYER X:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, -1, 45));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 104, 44));
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 102, 102));
@@ -292,12 +678,11 @@ public class TTT extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 104, 44));
-        getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, 70, 30));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 104, 44));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("PLAYER O:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, 45));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, -1, 45));
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 102, 102));
@@ -307,13 +692,18 @@ public class TTT extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 104, 44));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 104, 44));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel5.setText("PLAYER X:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, -1, 45));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
+         moveCount += 1;
         b1.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b1.setForeground(Color.red);
@@ -323,21 +713,23 @@ public class TTT extends javax.swing.JFrame {
         }     
         choosePlayer();
         winner();// TODO add your handling code here:
+        
+       
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
-        b2.setText(startGame);
+moveCount += 1;        b2.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b2.setForeground(Color.red);
             
         } else {
             b2.setForeground(Color.blue);
         }      
-         choosePlayer();winner();// TODO add your handling code here:
+         choosePlayer();winner(); 
     }//GEN-LAST:event_b2ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
-        b3.setText(startGame);
+ moveCount += 1;       b3.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b3.setForeground(Color.red);
             
@@ -345,44 +737,44 @@ public class TTT extends javax.swing.JFrame {
             b3.setForeground(Color.blue);
         }      
          choosePlayer();
-         winner();
+         winner(); 
     }//GEN-LAST:event_b3ActionPerformed
 
     private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
-        b4.setText(startGame);
+ moveCount += 1;       b4.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b4.setForeground(Color.red);
             
         } else {
             b4.setForeground(Color.blue);
         }      
-         choosePlayer();winner();
+         choosePlayer();winner(); 
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
-        b5.setText(startGame);
+ moveCount += 1;       b5.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b5.setForeground(Color.red);
             
         } else {
             b5.setForeground(Color.blue);
         }      
-         choosePlayer();winner();
+         choosePlayer();winner(); 
     }//GEN-LAST:event_b5ActionPerformed
 
     private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
-        b6.setText(startGame);
+ moveCount += 1;       b6.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b6.setForeground(Color.red);
             
         } else {
             b6.setForeground(Color.blue);
         }      
-         choosePlayer();winner();
+         choosePlayer();winner(); 
     }//GEN-LAST:event_b6ActionPerformed
 
     private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
-        b7.setText(startGame);
+    moveCount += 1;     b7.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b7.setForeground(Color.red);
             
@@ -393,25 +785,25 @@ public class TTT extends javax.swing.JFrame {
     }//GEN-LAST:event_b7ActionPerformed
 
     private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
-       b8.setText(startGame);
+   moveCount += 1;    b8.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b8.setForeground(Color.red);
             
         } else {
             b8.setForeground(Color.blue);
         }      
-         choosePlayer();winner();
+         choosePlayer();winner(); 
     }//GEN-LAST:event_b8ActionPerformed
 
     private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
-        b9.setText(startGame);
+ moveCount += 1;       b9.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b9.setForeground(Color.red);
             
         } else {
             b9.setForeground(Color.blue);
         }      
-         choosePlayer();winner();
+         choosePlayer();winner(); 
     }//GEN-LAST:event_b9ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -419,6 +811,7 @@ public class TTT extends javax.swing.JFrame {
         xCount = 0;
         oCount = 0;
         jblPlayerO.setText("0");
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -495,10 +888,8 @@ public class TTT extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jblPlayerO;
     private javax.swing.JLabel jblPlayerX;
     // End of variables declaration//GEN-END:variables

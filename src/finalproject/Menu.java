@@ -4,10 +4,7 @@
  */
 package finalproject;
 
-import java.awt.Color;
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+
 
 /**
  *
@@ -21,15 +18,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         
-        Icon a = jLabel1.getIcon();
-        ImageIcon icon1 = (ImageIcon)a;
-        Image image1 = icon1.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
-        jLabel1.setIcon(new ImageIcon(image1));
         
-        Icon b = titleName.getIcon();
-        ImageIcon icon2 = (ImageIcon)b;
-        Image image2 = icon2.getImage().getScaledInstance(titleName.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
-        titleName.setIcon(new ImageIcon(image2));
         
        
 
@@ -46,11 +35,10 @@ public class Menu extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        titleName = new javax.swing.JLabel();
         startBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(630, 500));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -62,7 +50,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 280, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 280, 50));
 
         jButton2.setBackground(new java.awt.Color(255, 204, 255));
         jButton2.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
@@ -72,39 +60,22 @@ public class Menu extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 280, 50));
-
-        titleName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/x vs o.png"))); // NOI18N
-        getContentPane().add(titleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 500, 260));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 280, 50));
 
         startBtn.setBackground(new java.awt.Color(255, 204, 255));
         startBtn.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
         startBtn.setText("START");
-        startBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         startBtn.setPreferredSize(new java.awt.Dimension(790, 467));
         startBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(startBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 280, 50));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bg.png"))); // NOI18N
-        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.lightGray, null, null));
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel1MouseEntered(evt);
-            }
-        });
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1042, 554));
+        getContentPane().add(startBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 280, 50));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1MouseEntered
 
     private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
        new NewJFrame().setVisible(true);
@@ -157,8 +128,6 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton startBtn;
-    private javax.swing.JLabel titleName;
     // End of variables declaration//GEN-END:variables
 }
