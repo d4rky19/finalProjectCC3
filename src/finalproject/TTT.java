@@ -130,6 +130,11 @@ public class TTT extends javax.swing.JFrame {
             gameScore();
         }
     }
+    private void limiter(){
+        
+      
+    }
+        
         
 
     /**
@@ -158,10 +163,15 @@ public class TTT extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jSpinner1 = new javax.swing.JSpinner();
+        jLabel4 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(734, 520));
         setPreferredSize(new java.awt.Dimension(790, 520));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         b1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         b1.addActionListener(new java.awt.event.ActionListener() {
@@ -169,6 +179,7 @@ public class TTT extends javax.swing.JFrame {
                 b1ActionPerformed(evt);
             }
         });
+        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 150));
 
         b7.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         b7.addActionListener(new java.awt.event.ActionListener() {
@@ -176,6 +187,7 @@ public class TTT extends javax.swing.JFrame {
                 b7ActionPerformed(evt);
             }
         });
+        getContentPane().add(b7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 150, 150));
 
         b2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         b2.addActionListener(new java.awt.event.ActionListener() {
@@ -183,6 +195,7 @@ public class TTT extends javax.swing.JFrame {
                 b2ActionPerformed(evt);
             }
         });
+        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 150, 150));
 
         b4.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         b4.addActionListener(new java.awt.event.ActionListener() {
@@ -190,6 +203,7 @@ public class TTT extends javax.swing.JFrame {
                 b4ActionPerformed(evt);
             }
         });
+        getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 150, 150));
 
         b9.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         b9.addActionListener(new java.awt.event.ActionListener() {
@@ -197,6 +211,7 @@ public class TTT extends javax.swing.JFrame {
                 b9ActionPerformed(evt);
             }
         });
+        getContentPane().add(b9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 150, 150));
 
         b5.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         b5.addActionListener(new java.awt.event.ActionListener() {
@@ -204,6 +219,7 @@ public class TTT extends javax.swing.JFrame {
                 b5ActionPerformed(evt);
             }
         });
+        getContentPane().add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 150, 150));
 
         b8.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         b8.addActionListener(new java.awt.event.ActionListener() {
@@ -211,6 +227,7 @@ public class TTT extends javax.swing.JFrame {
                 b8ActionPerformed(evt);
             }
         });
+        getContentPane().add(b8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 150, 150));
 
         b3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         b3.addActionListener(new java.awt.event.ActionListener() {
@@ -218,6 +235,7 @@ public class TTT extends javax.swing.JFrame {
                 b3ActionPerformed(evt);
             }
         });
+        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 150, 150));
 
         b6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         b6.addActionListener(new java.awt.event.ActionListener() {
@@ -225,24 +243,32 @@ public class TTT extends javax.swing.JFrame {
                 b6ActionPerformed(evt);
             }
         });
+        getContentPane().add(b6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 150, 150));
 
         jblPlayerX.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        jblPlayerX.setText("0");
+        getContentPane().add(jblPlayerX, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 66, 62));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, 197, 68));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setText("PLAYER O:");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("SET WINNING SCORE");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 150, 45));
 
         jblPlayerO.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        jblPlayerO.setText("0");
+        getContentPane().add(jblPlayerO, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, 66, 62));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 102, 102));
-        jButton1.setText("RESET");
+        jButton1.setText("RESET SCORE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 280, 130, 40));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 102, 102));
@@ -252,9 +278,11 @@ public class TTT extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 104, 44));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setText("PLAYER X:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, -1, 45));
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 102, 102));
@@ -264,100 +292,22 @@ public class TTT extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 104, 44));
+        getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, 70, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(b7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(b8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(b9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(b1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(b2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(b3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(b4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(b5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(b6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jblPlayerX, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jblPlayerO, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(42, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jblPlayerX, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jblPlayerO, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 44, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(b1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(b2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(b3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(b4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(b5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(b6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(b7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(b8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(b9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14))
-        );
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel4.setText("PLAYER O:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, 45));
+
+        jButton4.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 102, 102));
+        jButton4.setText("RESET");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 104, 44));
 
         pack();
         setLocationRelativeTo(null);
@@ -465,16 +415,10 @@ public class TTT extends javax.swing.JFrame {
     }//GEN-LAST:event_b9ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         b1.setText("");
-          b2.setText("");
-           b3.setText("");
-            b4.setText(""); 
-            b5.setText(""); 
-            b6.setText("");
-            b7.setText("");
-            b8.setText(""); 
-            b9.setText("");
-            
+        jblPlayerX.setText("0");
+        xCount = 0;
+        oCount = 0;
+        jblPlayerO.setText("0");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -485,6 +429,19 @@ public class TTT extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        System.exit(WIDTH);  // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+         b1.setText("");
+          b2.setText("");
+           b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -536,9 +493,12 @@ public class TTT extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLabel jblPlayerO;
     private javax.swing.JLabel jblPlayerX;
     // End of variables declaration//GEN-END:variables
