@@ -50,6 +50,8 @@ public class Menu extends javax.swing.JFrame {
         startBtn = new javax.swing.JButton();
         bgMenu = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        btn3By3 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         bgMenu2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,6 +103,21 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn3By3.setBackground(new java.awt.Color(255, 204, 255));
+        btn3By3.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
+        btn3By3.setText("3x3");
+        btn3By3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3By3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn3By3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 210, 40));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel2.setText("Go Back");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 110, 30));
+
         bgMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Desktop - 5.png"))); // NOI18N
         bgMenu2.setText("jLabel2");
         jPanel2.add(bgMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
@@ -125,6 +142,11 @@ public class Menu extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btn3By3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By3ActionPerformed
+        new TTT().setVisible(true);    
+        this.dispose();
+    }//GEN-LAST:event_btn3By3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,9 +186,11 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgMenu;
     private javax.swing.JLabel bgMenu2;
+    private javax.swing.JButton btn3By3;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton startBtn;
