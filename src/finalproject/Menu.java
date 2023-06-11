@@ -174,7 +174,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btn3By4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By4ActionPerformed
-        // TODO add your handling code here:
+        new TRI().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn3By4ActionPerformed
 
     /**

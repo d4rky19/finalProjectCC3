@@ -5,7 +5,9 @@
 package finalproject;
 
 import java.awt.Color;
+import static java.awt.Color.blue;
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -18,6 +20,7 @@ public class TTT extends javax.swing.JFrame {
     private int moveCount = 0;
     private int xLife = 100;
     private int oLife = 100;
+    private boolean buttonClicked = false;
 
     /**
      * Creates new form TTT
@@ -30,6 +33,11 @@ public class TTT extends javax.swing.JFrame {
     private void gameScore(){
         jblPlayerX.setText(String.valueOf(xCount));
         jblPlayerO.setText(String.valueOf(oCount));
+        
+    }
+    private void resetlife(){
+        xLife = 100;
+        oLife = 100;
     }
     private void choosePlayer(){
         if (startGame.equalsIgnoreCase("X")) {
@@ -60,10 +68,20 @@ public class TTT extends javax.swing.JFrame {
         }
          
          if (xLife==0) {
+             reset();
             int xx = oCount+=1;
             jblPlayerO.setText(String.valueOf(xx));
             jLabel1.setText("O WINS!");
-            reset();
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
             xLife = 100;
             oLife = 100;
            
@@ -71,11 +89,20 @@ public class TTT extends javax.swing.JFrame {
             
             
         } else if (oLife ==0) {
+            reset();
             int yy =xCount+= 1;
             jblPlayerX.setText(String.valueOf(yy));
-            
             jLabel1.setText("X WINS!");
-            reset();
+            b1.setText("");
+            b2.setText("");
+            b3.setText("");
+            b4.setText(""); 
+            b5.setText(""); 
+            b6.setText("");
+            b7.setText("");
+            b8.setText(""); 
+            b9.setText("");
+            moveCount = 0;
             xLife = 100;
             oLife = 100;
             
@@ -108,11 +135,11 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            
             b1.setBackground(Color.red);
             b2.setBackground(Color.red);
             b3.setBackground(Color.red);
             moveCount = 0;
+            resetlife();
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -125,6 +152,7 @@ public class TTT extends javax.swing.JFrame {
             b8.setText(""); 
             b9.setText("");
             moveCount = 0;
+            resetlife();
             
             
         
@@ -143,11 +171,10 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            
             b4.setBackground(Color.red);
             b5.setBackground(Color.red);
             b6.setBackground(Color.red);
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -159,11 +186,8 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
-            
-            
-        
-        }
+            moveCount = 0;resetlife();
+           }
         if(bt7.equals("X") && bt8.equals("X") && bt9.equals("X")){
              jLabel1.setText("X WINS!");
             xCount++;
@@ -177,7 +201,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             b7.setBackground(Color.red);
             b8.setBackground(Color.red);
             b9.setBackground(Color.red);
@@ -192,7 +216,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
             
         
@@ -213,7 +237,7 @@ public class TTT extends javax.swing.JFrame {
             b1.setBackground(Color.red);
             b4.setBackground(Color.red);
             b7.setBackground(Color.red);
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
            jLabel1.setText("DRAW!");
             b1.setText("");
@@ -225,7 +249,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
             
         
@@ -246,7 +270,7 @@ public class TTT extends javax.swing.JFrame {
             b2.setBackground(Color.red);
             b5.setBackground(Color.red);
             b8.setBackground(Color.red);
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
            jLabel1.setText("DRAW!");
             b1.setText("");
@@ -258,7 +282,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
             
         
@@ -279,7 +303,7 @@ public class TTT extends javax.swing.JFrame {
             b3.setBackground(Color.red);
             b6.setBackground(Color.red);
             b9.setBackground(Color.red);
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -291,7 +315,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
             
         
@@ -312,7 +336,7 @@ public class TTT extends javax.swing.JFrame {
             b1.setBackground(Color.red);
             b5.setBackground(Color.red);
             b9.setBackground(Color.red);
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -325,7 +349,7 @@ public class TTT extends javax.swing.JFrame {
             b8.setText(""); 
             b9.setText("");
             moveCount = 0;
-            
+            resetlife();
             
         
         }
@@ -345,7 +369,7 @@ public class TTT extends javax.swing.JFrame {
             b3.setBackground(Color.red);
             b5.setBackground(Color.red);
             b7.setBackground(Color.red);
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
            jLabel1.setText("DRAW!");
             b1.setText("");
@@ -357,7 +381,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
             
         
@@ -379,7 +403,7 @@ public class TTT extends javax.swing.JFrame {
             b2.setBackground(Color.blue);
             b3.setBackground(Color.blue);
             moveCount = 0;
-            
+            resetlife();
         } else if (moveCount ==9){
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -391,7 +415,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
             
         
@@ -411,7 +435,7 @@ public class TTT extends javax.swing.JFrame {
             b4.setBackground(Color.blue);
             b5.setBackground(Color.blue);
             b6.setBackground(Color.blue);
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
            jLabel1.setText("DRAW!");
             b1.setText("");
@@ -424,7 +448,7 @@ public class TTT extends javax.swing.JFrame {
             b8.setText(""); 
             b9.setText("");
              
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
             
         
@@ -445,7 +469,7 @@ public class TTT extends javax.swing.JFrame {
             b8.setBackground(Color.blue);
             b9.setBackground(Color.blue);
             
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -457,7 +481,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
         
         }
@@ -476,7 +500,7 @@ public class TTT extends javax.swing.JFrame {
             b1.setBackground(Color.blue);
             b4.setBackground(Color.blue);
             b7.setBackground(Color.blue);
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -488,7 +512,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
             
         
@@ -508,7 +532,7 @@ public class TTT extends javax.swing.JFrame {
             b2.setBackground(Color.blue);
             b5.setBackground(Color.blue);
             b8.setBackground(Color.blue);
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -520,7 +544,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
         
         }
@@ -539,7 +563,7 @@ public class TTT extends javax.swing.JFrame {
             b3.setBackground(Color.blue);
             b6.setBackground(Color.blue);
             b9.setBackground(Color.blue);
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
            
             jLabel1.setText("DRAW!");
@@ -552,7 +576,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
             
         
@@ -572,7 +596,7 @@ public class TTT extends javax.swing.JFrame {
             b1.setBackground(Color.blue);
             b5.setBackground(Color.blue);
             b9.setBackground(Color.blue);
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
            jLabel1.setText("DRAW!");
             b1.setText("");
@@ -584,7 +608,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
         
         }
@@ -601,10 +625,11 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            
             b3.setBackground(Color.blue);
             b5.setBackground(Color.blue);
             b7.setBackground(Color.blue);
-            moveCount = 0;
+            moveCount = 0;resetlife();
         }else if (moveCount ==9){
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -616,11 +641,11 @@ public class TTT extends javax.swing.JFrame {
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
-            moveCount = 0;
+            moveCount = 0;resetlife();
             
         
         }
-        
+        buttonClicked = false;
     }
     private void reset(){
         b1.setBackground(null);
@@ -844,7 +869,8 @@ public class TTT extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-         moveCount += 1;
+        
+        moveCount += 1;
         b1.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b1.setForeground(Color.red);
@@ -853,17 +879,18 @@ public class TTT extends javax.swing.JFrame {
         } else {
             b1.setForeground(Color.blue);
              reset();
-        } 
         
+        }
         
         choosePlayer();
-        winner();// TODO add your handling code here:
-        
+        winner();
+        buttonClicked = true;
        
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
-moveCount += 1;        b2.setText(startGame);
+ if (!buttonClicked) {
+        moveCount += 1;        b2.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b2.setForeground(Color.red);
              reset();
@@ -871,7 +898,8 @@ moveCount += 1;        b2.setText(startGame);
         } else {
             b2.setForeground(Color.blue);
              reset();
-        }      
+        }   }
+        buttonClicked = true;
          choosePlayer();winner();
     }//GEN-LAST:event_b2ActionPerformed
 
