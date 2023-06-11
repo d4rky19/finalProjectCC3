@@ -4,6 +4,10 @@
  */
 package finalproject;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 
 
 /**
@@ -18,9 +22,15 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         
+        Icon a = bgMenu.getIcon();
+        ImageIcon icon1 = (ImageIcon)a;
+        Image image1 = icon1.getImage().getScaledInstance(bgMenu.getWidth(), bgMenu.getHeight(), Image.SCALE_SMOOTH);
+        bgMenu.setIcon(new ImageIcon(image1));
         
-        
-       
+        Icon b = bgMenu2.getIcon();
+        ImageIcon icon2 = (ImageIcon)a;
+        Image image2 = icon1.getImage().getScaledInstance(bgMenu2.getWidth(), bgMenu2.getHeight(), Image.SCALE_SMOOTH);
+        bgMenu2.setIcon(new ImageIcon(image2));
 
     }
 
@@ -33,24 +43,24 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         startBtn = new javax.swing.JButton();
+        bgMenu = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        bgMenu2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(630, 500));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 255));
-        jButton1.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
-        jButton1.setText("EXIT");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 280, 50));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Game Logo.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 500, 240));
 
         jButton2.setBackground(new java.awt.Color(255, 204, 255));
         jButton2.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
@@ -60,26 +70,52 @@ public class Menu extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 280, 50));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 210, 40));
+
+        jButton1.setBackground(new java.awt.Color(255, 204, 255));
+        jButton1.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
+        jButton1.setText("EXIT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 470, 210, 40));
 
         startBtn.setBackground(new java.awt.Color(255, 204, 255));
         startBtn.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
         startBtn.setText("START");
+        startBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         startBtn.setPreferredSize(new java.awt.Dimension(790, 467));
         startBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(startBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 280, 50));
+        jPanel1.add(startBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 210, 40));
+
+        bgMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Desktop - 5.png"))); // NOI18N
+        jPanel1.add(bgMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bgMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Desktop - 5.png"))); // NOI18N
+        bgMenu2.setText("jLabel2");
+        jPanel2.add(bgMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
-       new NewJFrame().setVisible(true);
-       this.dispose();
+       //new NewJFrame().setVisible(true);
+       //this.dispose();
+       jPanel1.setVisible(false);
+       jPanel2.setVisible(true);
     }//GEN-LAST:event_startBtnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -126,8 +162,13 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bgMenu;
+    private javax.swing.JLabel bgMenu2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton startBtn;
     // End of variables declaration//GEN-END:variables
 }
