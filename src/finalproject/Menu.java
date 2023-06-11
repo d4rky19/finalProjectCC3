@@ -4,6 +4,7 @@
  */
 package finalproject;
 
+import java.awt.Color;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -44,22 +45,72 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        btn3By4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        btn3By3 = new javax.swing.JButton();
-        bgMenu2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         startBtn = new javax.swing.JButton();
         bgMenu = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        btn3By4 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        btn3By3 = new javax.swing.JButton();
+        bgMenu2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(630, 500));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Game Logo.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 500, 240));
+
+        jButton2.setBackground(new java.awt.Color(255, 204, 255));
+        jButton2.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
+        jButton2.setText("MECHANICS");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 210, 40));
+
+        jButton1.setBackground(new java.awt.Color(255, 204, 255));
+        jButton1.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
+        jButton1.setText("EXIT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 470, 210, 40));
+
+        startBtn.setBackground(new java.awt.Color(255, 204, 255));
+        startBtn.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
+        startBtn.setText("START");
+        startBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        startBtn.setPreferredSize(new java.awt.Dimension(790, 467));
+        startBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                startBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                startBtnMouseExited(evt);
+            }
+        });
+        startBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(startBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 210, 40));
+
+        bgMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Desktop - 5.png"))); // NOI18N
+        jPanel1.add(bgMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -98,48 +149,6 @@ public class Menu extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Game Logo.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 500, 240));
-
-        jButton2.setBackground(new java.awt.Color(255, 204, 255));
-        jButton2.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
-        jButton2.setText("MECHANICS");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 210, 40));
-
-        jButton1.setBackground(new java.awt.Color(255, 204, 255));
-        jButton1.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
-        jButton1.setText("EXIT");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 470, 210, 40));
-
-        startBtn.setBackground(new java.awt.Color(255, 204, 255));
-        startBtn.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
-        startBtn.setText("START");
-        startBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        startBtn.setPreferredSize(new java.awt.Dimension(790, 467));
-        startBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                startBtnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(startBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 210, 40));
-
-        bgMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Desktop - 5.png"))); // NOI18N
-        jPanel1.add(bgMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -177,6 +186,16 @@ public class Menu extends javax.swing.JFrame {
         new TRI().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn3By4ActionPerformed
+
+    private void startBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startBtnMouseEntered
+        // TODO add your handling code here:
+        startBtn.setBackground(Color.RED);
+    }//GEN-LAST:event_startBtnMouseEntered
+
+    private void startBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startBtnMouseExited
+        // TODO add your handling code here:
+         startBtn.setBackground(new Color(255, 204, 255));
+    }//GEN-LAST:event_startBtnMouseExited
 
     /**
      * @param args the command line arguments
