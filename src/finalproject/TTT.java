@@ -16,7 +16,8 @@ public class TTT extends javax.swing.JFrame {
     private int xCount = 0;
     private int oCount = 0;
     private int moveCount = 0;
-    
+    private int xLife = 100;
+    private int oLife = 100;
 
     /**
      * Creates new form TTT
@@ -39,6 +40,48 @@ public class TTT extends javax.swing.JFrame {
         }
         
     }
+    private void roll(){
+         int rand = (int)(Math.random()*4);
+         
+         if (rand == 1) {
+             jLabel7.setText("-50 health Player X");
+             
+             xLife -=50;
+             jLabel10.setText(String.valueOf(xLife));
+            
+        } else if (rand == 2) {
+            jLabel7.setText("-50 health Player O");
+              oLife -= 50;
+              jLabel8.setText(String.valueOf(oLife));
+        }else if (rand == 3 ) {
+            jLabel7.setText("No Effect!");
+        }else{
+            jLabel7.setText("Still No Effect!");
+        }
+         
+         if (xLife==0) {
+            int xx = oCount+=1;
+            jblPlayerO.setText(String.valueOf(xx));
+            jLabel1.setText("O WINS!");
+            reset();
+            xLife = 100;
+            oLife = 100;
+           
+            
+            
+            
+        } else if (oLife ==0) {
+            int yy =xCount+= 1;
+            jblPlayerX.setText(String.valueOf(yy));
+            
+            jLabel1.setText("X WINS!");
+            reset();
+            xLife = 100;
+            oLife = 100;
+            
+            
+        }
+    }
     private void winner(){
         String bt1 = b1.getText();
         String bt2 = b2.getText();
@@ -49,6 +92,7 @@ public class TTT extends javax.swing.JFrame {
         String bt7 = b7.getText();
         String bt8 = b8.getText();
         String bt9 = b9.getText();
+        
         
        
         if (bt1.equals("X") && bt2.equals("X") && bt3.equals("X")) {
@@ -588,6 +632,8 @@ public class TTT extends javax.swing.JFrame {
         b7.setBackground(null);
         b8.setBackground(null);
         b9.setBackground(null);
+        
+       
     }
    
    
@@ -621,6 +667,12 @@ public class TTT extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(734, 520));
@@ -755,9 +807,37 @@ public class TTT extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 104, 44));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setText("PLAYER X:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, -1, 45));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setText("O LIFE: ");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 70, 50));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel6.setText("PLAYER X:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, -1, 45));
+
+        jButton5.setText("SPIN");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 50, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setText("               SPIN!");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, 180, 50));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel8.setText("100");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 90, 50, 50));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel9.setText("X LIFE: ");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 70, 50));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel10.setText("100");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 50, 50));
 
         pack();
         setLocationRelativeTo(null);
@@ -792,7 +872,7 @@ moveCount += 1;        b2.setText(startGame);
             b2.setForeground(Color.blue);
              reset();
         }      
-         choosePlayer();winner(); 
+         choosePlayer();winner();
     }//GEN-LAST:event_b2ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
@@ -819,7 +899,7 @@ moveCount += 1;        b2.setText(startGame);
             b4.setForeground(Color.blue);
              reset();
         }      
-         choosePlayer();winner(); 
+         choosePlayer();winner();
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
@@ -892,7 +972,12 @@ moveCount += 1;        b2.setText(startGame);
         xCount = 0;
         oCount = 0;
         jblPlayerO.setText("0");
-       
+       jLabel8.setText("100");
+            jLabel10.setText("100");
+            jLabel1.setText("");
+            jLabel8.setText("100");
+            jLabel10.setText("100");
+            jLabel7.setText("Spin!");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -914,8 +999,16 @@ moveCount += 1;        b2.setText(startGame);
             b7.setText("");
             b8.setText(""); 
             b9.setText("");
+            jLabel1.setText("");
+            jLabel8.setText("100");
+            jLabel10.setText("100");
+            jLabel7.setText("Spin!");
             
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        roll();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -968,9 +1061,15 @@ moveCount += 1;        b2.setText(startGame);
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jblPlayerO;
     private javax.swing.JLabel jblPlayerX;
     // End of variables declaration//GEN-END:variables
