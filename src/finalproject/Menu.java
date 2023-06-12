@@ -46,8 +46,8 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        startBtn1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         startBtn = new javax.swing.JButton();
         bgMenu = new javax.swing.JLabel();
@@ -64,38 +64,32 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Game Logo.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 500, 240));
-
-        jButton2.setBackground(new java.awt.Color(255, 204, 255));
-        jButton2.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
-        jButton2.setText("MECHANICS");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        startBtn1.setBackground(new java.awt.Color(255, 204, 255));
+        startBtn1.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
+        startBtn1.setText("MECHANICS");
+        startBtn1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        startBtn1.setPreferredSize(new java.awt.Dimension(790, 467));
+        startBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton2MouseEntered(evt);
+                startBtn1MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton2MouseExited(evt);
+                startBtn1MouseExited(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        startBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                startBtn1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 210, 40));
+        jPanel1.add(startBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 210, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Game Logo.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 500, 240));
 
         jButton1.setBackground(new java.awt.Color(255, 204, 255));
         jButton1.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
         jButton1.setText("EXIT");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton1MouseExited(evt);
-            }
-        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -132,7 +126,7 @@ public class Menu extends javax.swing.JFrame {
 
         btn3By4.setBackground(new java.awt.Color(255, 204, 255));
         btn3By4.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
-        btn3By4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finalproject/triangle xox.png"))); // NOI18N
+        btn3By4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/triangle xox.png"))); // NOI18N
         btn3By4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn3By4ActionPerformed(evt);
@@ -151,7 +145,7 @@ public class Menu extends javax.swing.JFrame {
 
         btn3By3.setBackground(new java.awt.Color(255, 204, 255));
         btn3By3.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
-        btn3By3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/finalproject/3x3 xox.png"))); // NOI18N
+        btn3By3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/3x3 xox.png"))); // NOI18N
         btn3By3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn3By3ActionPerformed(evt);
@@ -183,29 +177,15 @@ public class Menu extends javax.swing.JFrame {
         System.exit(WIDTH);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void btn3By3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By3ActionPerformed
-        new TTT().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btn3By3ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         remove(jPanel2);
        
        setContentPane(jPanel1);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void btn3By4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By4ActionPerformed
-        new TRI().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btn3By4ActionPerformed
-
     private void startBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startBtnMouseEntered
         // TODO add your handling code here:
-        startBtn.setBackground(Color.PINK);
+        startBtn.setBackground(Color.RED);
     }//GEN-LAST:event_startBtnMouseEntered
 
     private void startBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startBtnMouseExited
@@ -213,25 +193,27 @@ public class Menu extends javax.swing.JFrame {
          startBtn.setBackground(new Color(255, 204, 255));
     }//GEN-LAST:event_startBtnMouseExited
 
-    private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered
-        // TODO add your handling code here:
-        jButton2.setBackground(Color.PINK);
-    }//GEN-LAST:event_jButton2MouseEntered
+    private void btn3By4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By4ActionPerformed
+        new TRI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn3By4ActionPerformed
 
-    private void jButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseExited
-        // TODO add your handling code here:
-        jButton2.setBackground(new Color(255, 204, 255));
-    }//GEN-LAST:event_jButton2MouseExited
+    private void btn3By3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By3ActionPerformed
+        new TTT().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn3By3ActionPerformed
 
-    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+    private void startBtn1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startBtn1MouseEntered
         // TODO add your handling code here:
-        jButton1.setBackground(Color.RED);
-    }//GEN-LAST:event_jButton1MouseEntered
+    }//GEN-LAST:event_startBtn1MouseEntered
 
-    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+    private void startBtn1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startBtn1MouseExited
         // TODO add your handling code here:
-        jButton1.setBackground(new Color(255, 204, 255));
-    }//GEN-LAST:event_jButton1MouseExited
+    }//GEN-LAST:event_startBtn1MouseExited
+
+    private void startBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_startBtn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,11 +256,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btn3By3;
     private javax.swing.JButton btn3By4;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton startBtn;
+    private javax.swing.JButton startBtn1;
     // End of variables declaration//GEN-END:variables
 }

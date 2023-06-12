@@ -24,13 +24,14 @@ public class TTT extends javax.swing.JFrame {
     private int xLife = 100;
     private int oLife = 100;
     private boolean buttonClicked = false;
-
     /**
      * Creates new form TTT
      */
     public TTT() {
-        initComponents();
         
+        initComponents();
+        jButton5.setEnabled(false);
+         
         Icon c = background.getIcon();
         ImageIcon icon1 = (ImageIcon)c;
         Image image2 = icon1.getImage().getScaledInstance(background.getWidth(), background.getHeight(), Image.SCALE_SMOOTH);
@@ -39,11 +40,32 @@ public class TTT extends javax.swing.JFrame {
     private void gameScore(){
         jblPlayerX.setText(String.valueOf(xCount));
         jblPlayerO.setText(String.valueOf(oCount));
+           
+
         
     }
+    
     private void resetlife(){
+        jButton5.setEnabled(false);
         xLife = 100;
         oLife = 100;
+    }
+    private void max(){
+        
+        String max =jTextField1.getText();
+        String x = String.valueOf(xCount);
+        String y = String.valueOf(oCount);
+        if(max.equals(x)){
+            JOptionPane.showMessageDialog(null, "X WINS!");
+            jblPlayerX.setText("0");jblPlayerO.setText("0");
+            xCount = 0;
+            oCount = 0;
+         }else if (max.equals(y)){
+              JOptionPane.showMessageDialog(null, "O WINS!");
+              jblPlayerX.setText("0");jblPlayerO.setText("0");
+              xCount = 0;
+            oCount = 0;
+         }
     }
     private void choosePlayer(){
         if (startGame.equalsIgnoreCase("X")) {
@@ -54,7 +76,9 @@ public class TTT extends javax.swing.JFrame {
         }
         
     }
+    
     private void roll(){
+        
          int rand = (int)(Math.random()*4);
          
          if (rand == 1) {
@@ -116,6 +140,8 @@ public class TTT extends javax.swing.JFrame {
         }
     }
     private void winner(){
+        
+      
         String bt1 = b1.getText();
         String bt2 = b2.getText();
         String bt3 = b3.getText();
@@ -130,7 +156,7 @@ public class TTT extends javax.swing.JFrame {
        
         if (bt1.equals("X") && bt2.equals("X") && bt3.equals("X")) {
             bgPic1.setText("X WINS!");
-            xCount++;
+            xCount++; max();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -165,8 +191,8 @@ public class TTT extends javax.swing.JFrame {
         }
         
         if(bt4.equals("X") && bt5.equals("X") && bt6.equals("X")){
-              bgPic1.setText("X WINS!");
-            xCount++;
+             bgPic1.setText("X WINS!");
+            xCount++; max();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -196,7 +222,7 @@ public class TTT extends javax.swing.JFrame {
            }
         if(bt7.equals("X") && bt8.equals("X") && bt9.equals("X")){
              bgPic1.setText("X WINS!");
-            xCount++;
+            xCount++; max();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -229,7 +255,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt1.equals("X") && bt4.equals("X") && bt7.equals("X")){
              bgPic1.setText("X WINS!");
-            xCount++;
+            xCount++; max();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -262,16 +288,16 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt2.equals("X") && bt5.equals("X") && bt8.equals("X")){
              bgPic1.setText("X WINS!");
-            xCount++;
+            xCount++; max();
             gameScore();
             b1.setText("");
-            b2.setText("");
+            b2.setText("X");
             b3.setText("");
             b4.setText(""); 
-            b5.setText(""); 
+            b5.setText("X"); 
             b6.setText("");
             b7.setText("");
-            b8.setText(""); 
+            b8.setText("X"); 
             b9.setText("");
             b2.setBackground(Color.red);
             b5.setBackground(Color.red);
@@ -295,7 +321,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt3.equals("X") && bt6.equals("X") && bt9.equals("X")){
              bgPic1.setText("X WINS!");
-            xCount++;
+            xCount++; max();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -328,7 +354,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt1.equals("X") && bt5.equals("X") && bt9.equals("X")){
             bgPic1.setText("X WINS!");
-            xCount++;
+            xCount++; max();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -361,7 +387,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt3.equals("X") && bt5.equals("X") && bt7.equals("X")){
             bgPic1.setText("X WINS!");
-            xCount++;
+            xCount++; max();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -394,7 +420,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if (bt1.equals("O") && bt2.equals("O") && bt3.equals("O")) {
             bgPic1.setText("O WINS!");
-            oCount++;
+            oCount++; max();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -428,7 +454,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt4.equals("O") && bt5.equals("O") && bt6.equals("O")){
             bgPic1.setText("O WINS!");
-            oCount++;
+            oCount++; max();
             gameScore();
             
             b1.setText("");
@@ -463,7 +489,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt7.equals("O") && bt8.equals("O") && bt9.equals("O")){
             bgPic1.setText("O WINS!");
-            oCount++;
+            oCount++; max();
             gameScore();b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -495,7 +521,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt1.equals("O") && bt4.equals("O") && bt7.equals("O")){
             bgPic1.setText("O WINS!");
-            oCount++;
+            oCount++; max();
             gameScore();b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -527,7 +553,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt2.equals("O") && bt5.equals("O") && bt8.equals("O")){
             bgPic1.setText("O WINS!");
-            oCount++;
+            oCount++; max();
             gameScore();b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -558,7 +584,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt3.equals("O") && bt6.equals("O") && bt9.equals("O")){
             bgPic1.setText("O WINS!");
-            oCount++;
+            oCount++; max();
             gameScore();b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -591,7 +617,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt1.equals("O") && bt5.equals("O") && bt9.equals("O")){
             bgPic1.setText("O WINS!");
-            oCount++;
+            oCount++; max();
             gameScore();b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -622,7 +648,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt3.equals("O") && bt5.equals("O") && bt7.equals("O")){
            bgPic1.setText("O WINS!");
-            oCount++;
+            oCount++; max();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -656,19 +682,23 @@ public class TTT extends javax.swing.JFrame {
         buttonClicked = false;
     }
     private void reset(){
-        b1.setBackground(null);
-        b2.setBackground(null);
-        b3.setBackground(null);
-        b4.setBackground(null);
-        b5.setBackground(null);
-        b6.setBackground(null);
-        b7.setBackground(null);
-        b8.setBackground(null);
-        b9.setBackground(null);
+        b1.setBackground(Color.white);
+        b2.setBackground(Color.white);
+        b3.setBackground(Color.white);
+        b4.setBackground(Color.white);
+        b5.setBackground(Color.white);
+        b6.setBackground(Color.white);
+        b7.setBackground(Color.white);
+        b8.setBackground(Color.white);
+        b9.setBackground(Color.white);
         
-       
+       if(moveCount ==2){
+             jButton5.setEnabled(true);
+             
+         }
     }
    
+
    
         
         
@@ -706,6 +736,8 @@ public class TTT extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -714,9 +746,12 @@ public class TTT extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bgPic1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        getContentPane().add(bgPic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 190, 60));
+        bgPic1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        bgPic1.setForeground(new java.awt.Color(255, 102, 102));
+        bgPic1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(bgPic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 300, 60));
 
+        b1.setBackground(new java.awt.Color(245, 245, 245));
         b1.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
         b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -725,6 +760,7 @@ public class TTT extends javax.swing.JFrame {
         });
         getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 160));
 
+        b7.setBackground(new java.awt.Color(245, 245, 245));
         b7.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
         b7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -733,6 +769,7 @@ public class TTT extends javax.swing.JFrame {
         });
         getContentPane().add(b7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 160, 160));
 
+        b2.setBackground(new java.awt.Color(245, 245, 245));
         b2.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
         b2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -741,6 +778,7 @@ public class TTT extends javax.swing.JFrame {
         });
         getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 160, 160));
 
+        b4.setBackground(new java.awt.Color(245, 245, 245));
         b4.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
         b4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -749,6 +787,7 @@ public class TTT extends javax.swing.JFrame {
         });
         getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 160, 160));
 
+        b9.setBackground(new java.awt.Color(245, 245, 245));
         b9.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
         b9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -757,6 +796,7 @@ public class TTT extends javax.swing.JFrame {
         });
         getContentPane().add(b9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 160, 160));
 
+        b5.setBackground(new java.awt.Color(245, 245, 245));
         b5.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
         b5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -765,6 +805,7 @@ public class TTT extends javax.swing.JFrame {
         });
         getContentPane().add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 160, 160));
 
+        b8.setBackground(new java.awt.Color(245, 245, 245));
         b8.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
         b8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -773,6 +814,7 @@ public class TTT extends javax.swing.JFrame {
         });
         getContentPane().add(b8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 160, 160));
 
+        b3.setBackground(new java.awt.Color(245, 245, 245));
         b3.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
         b3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -781,6 +823,7 @@ public class TTT extends javax.swing.JFrame {
         });
         getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 160, 160));
 
+        b6.setBackground(new java.awt.Color(245, 245, 245));
         b6.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
         b6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -797,6 +840,7 @@ public class TTT extends javax.swing.JFrame {
         jblPlayerO.setText("0");
         getContentPane().add(jblPlayerO, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 270, 66, 62));
 
+        jButton1.setBackground(new java.awt.Color(204, 204, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 102, 102));
         jButton1.setText("RESET SCORE");
@@ -807,6 +851,7 @@ public class TTT extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 110, 40));
 
+        jButton2.setBackground(new java.awt.Color(204, 204, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 102, 102));
         jButton2.setText("MENU");
@@ -817,6 +862,7 @@ public class TTT extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 104, 44));
 
+        jButton3.setBackground(new java.awt.Color(204, 204, 255));
         jButton3.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 102, 102));
         jButton3.setText("EXIT");
@@ -825,12 +871,13 @@ public class TTT extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 104, 44));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 110, 44));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("PLAYER O:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, -1, 45));
 
+        jButton4.setBackground(new java.awt.Color(204, 204, 255));
         jButton4.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 102, 102));
         jButton4.setText("RESET");
@@ -850,12 +897,17 @@ public class TTT extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, -1, 45));
 
         jButton5.setText("SPIN");
+        jButton5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jButton5MouseMoved(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 50, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("               SPIN!");
@@ -872,6 +924,11 @@ public class TTT extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setText("100");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 50, 50));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel1.setText("SET MAX SCORE: ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 130, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 460, 40, 30));
 
         background.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
@@ -896,6 +953,7 @@ public class TTT extends javax.swing.JFrame {
         
         }
         
+        
         choosePlayer();
         winner();
         buttonClicked = true;
@@ -907,6 +965,7 @@ public class TTT extends javax.swing.JFrame {
         moveCount += 1;        b2.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b2.setForeground(Color.red);
+            b2.setBackground(new Color(32, 33, 33));
              reset();
             
         } else {
@@ -973,11 +1032,11 @@ public class TTT extends javax.swing.JFrame {
     private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
     moveCount += 1;     b7.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
-            b7.setForeground(new Color(137, 0, 0));
+            b7.setForeground(Color.red);
              reset();
             
         } else {
-            b7.setForeground(new Color(8, 0, 124));
+            b7.setForeground(Color.blue);
              reset();
         }      
          choosePlayer();winner();
@@ -1045,12 +1104,23 @@ public class TTT extends javax.swing.JFrame {
             jLabel8.setText("100");
             jLabel10.setText("100");
             jLabel7.setText("Spin!");
+          moveCount = 0;
+             jButton5.setEnabled(false);
+             
+         
+
             
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        roll();
+   roll();     
+   
+        
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseMoved
+      // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5MouseMoved
 
     /**
      * @param args the command line arguments
@@ -1106,6 +1176,7 @@ public class TTT extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1113,6 +1184,7 @@ public class TTT extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel jblPlayerO;
     private javax.swing.JLabel jblPlayerX;
     // End of variables declaration//GEN-END:variables
