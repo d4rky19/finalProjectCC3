@@ -737,6 +737,7 @@ public class TRI extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         b10 = new javax.swing.JButton();
+        bg2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(734, 520));
@@ -860,7 +861,7 @@ public class TRI extends javax.swing.JFrame {
         jLabel4.setText("PLAYER O:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, -1, 45));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 102, 102));
         jButton4.setText("RESET");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -909,6 +910,10 @@ public class TRI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(b10, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 100, 100));
+
+        bg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
+        bg2.setText("jLabel2");
+        getContentPane().add(bg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -50, 800, 570));
 
         pack();
         setLocationRelativeTo(null);
@@ -1152,6 +1157,7 @@ public class TRI extends javax.swing.JFrame {
     private javax.swing.JButton b7;
     private javax.swing.JButton b8;
     private javax.swing.JButton b9;
+    private javax.swing.JLabel bg2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
