@@ -45,22 +45,73 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btn3By4 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        btn3By3 = new javax.swing.JButton();
+        bgMenu2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         startBtn1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         startBtn = new javax.swing.JButton();
         bgMenu = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        btn3By4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        btn3By3 = new javax.swing.JButton();
-        bgMenu2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(630, 500));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Triangle");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, 130, 40));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("3x3");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 130, 40));
+
+        btn3By4.setBackground(new java.awt.Color(255, 204, 255));
+        btn3By4.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
+        btn3By4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/triangle xox.png"))); // NOI18N
+        btn3By4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3By4ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn3By4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 170, 170));
+
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton3.setText("BACK");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 90, -1));
+
+        btn3By3.setBackground(new java.awt.Color(255, 204, 255));
+        btn3By3.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
+        btn3By3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/3x3 xox.png"))); // NOI18N
+        btn3By3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3By3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn3By3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 170, 170));
+
+        bgMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Desktop - 5.png"))); // NOI18N
+        bgMenu2.setText("jLabel2");
+        jPanel2.add(bgMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 540));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -118,46 +169,9 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(startBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 210, 40));
 
         bgMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Desktop - 5.png"))); // NOI18N
-        jPanel1.add(bgMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
+        jPanel1.add(bgMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 540));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btn3By4.setBackground(new java.awt.Color(255, 204, 255));
-        btn3By4.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
-        btn3By4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/triangle xox.png"))); // NOI18N
-        btn3By4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3By4ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btn3By4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 170, 170));
-
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton3.setText("BACK");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 90, -1));
-
-        btn3By3.setBackground(new java.awt.Color(255, 204, 255));
-        btn3By3.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
-        btn3By3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/3x3 xox.png"))); // NOI18N
-        btn3By3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3By3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btn3By3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 170, 170));
-
-        bgMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Desktop - 5.png"))); // NOI18N
-        bgMenu2.setText("jLabel2");
-        jPanel2.add(bgMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
 
         pack();
         setLocationRelativeTo(null);
@@ -258,6 +272,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton startBtn;

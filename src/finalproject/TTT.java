@@ -31,6 +31,7 @@ public class TTT extends javax.swing.JFrame {
         
         initComponents();
         jButton5.setEnabled(false);
+        bgTictac.setBackground(new Color(213, 134, 145, 50));
          
         Icon c = background.getIcon();
         ImageIcon icon1 = (ImageIcon)c;
@@ -713,43 +714,48 @@ public class TTT extends javax.swing.JFrame {
     private void initComponents() {
 
         bgPic1 = new javax.swing.JLabel();
+        bgTictac = new javax.swing.JPanel();
         b1 = new javax.swing.JButton();
         b7 = new javax.swing.JButton();
         b2 = new javax.swing.JButton();
         b4 = new javax.swing.JButton();
         b9 = new javax.swing.JButton();
         b5 = new javax.swing.JButton();
-        b8 = new javax.swing.JButton();
         b3 = new javax.swing.JButton();
+        b8 = new javax.swing.JButton();
         b6 = new javax.swing.JButton();
-        jblPlayerX = new javax.swing.JLabel();
-        jblPlayerO = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jblPlayerX = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jblPlayerO = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(734, 520));
-        setPreferredSize(new java.awt.Dimension(790, 535));
-        setResizable(false);
+        setMinimumSize(new java.awt.Dimension(960, 575));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bgPic1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        bgPic1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         bgPic1.setForeground(new java.awt.Color(255, 102, 102));
         bgPic1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(bgPic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 300, 60));
+        getContentPane().add(bgPic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 300, 60));
+
+        bgTictac.setBackground(new java.awt.Color(51, 153, 255));
+        bgTictac.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         b1.setBackground(new java.awt.Color(245, 245, 245));
         b1.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
@@ -758,7 +764,7 @@ public class TTT extends javax.swing.JFrame {
                 b1ActionPerformed(evt);
             }
         });
-        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 160));
+        bgTictac.add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 140, 140));
 
         b7.setBackground(new java.awt.Color(245, 245, 245));
         b7.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
@@ -767,7 +773,7 @@ public class TTT extends javax.swing.JFrame {
                 b7ActionPerformed(evt);
             }
         });
-        getContentPane().add(b7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 160, 160));
+        bgTictac.add(b7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 140, 140));
 
         b2.setBackground(new java.awt.Color(245, 245, 245));
         b2.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
@@ -776,7 +782,7 @@ public class TTT extends javax.swing.JFrame {
                 b2ActionPerformed(evt);
             }
         });
-        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 160, 160));
+        bgTictac.add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 140, 140));
 
         b4.setBackground(new java.awt.Color(245, 245, 245));
         b4.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
@@ -785,7 +791,7 @@ public class TTT extends javax.swing.JFrame {
                 b4ActionPerformed(evt);
             }
         });
-        getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 160, 160));
+        bgTictac.add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 140, 140));
 
         b9.setBackground(new java.awt.Color(245, 245, 245));
         b9.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
@@ -794,7 +800,7 @@ public class TTT extends javax.swing.JFrame {
                 b9ActionPerformed(evt);
             }
         });
-        getContentPane().add(b9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 160, 160));
+        bgTictac.add(b9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, 140, 140));
 
         b5.setBackground(new java.awt.Color(245, 245, 245));
         b5.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
@@ -803,16 +809,7 @@ public class TTT extends javax.swing.JFrame {
                 b5ActionPerformed(evt);
             }
         });
-        getContentPane().add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 160, 160));
-
-        b8.setBackground(new java.awt.Color(245, 245, 245));
-        b8.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
-        b8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(b8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 160, 160));
+        bgTictac.add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 140, 140));
 
         b3.setBackground(new java.awt.Color(245, 245, 245));
         b3.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
@@ -821,7 +818,16 @@ public class TTT extends javax.swing.JFrame {
                 b3ActionPerformed(evt);
             }
         });
-        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 160, 160));
+        bgTictac.add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 140, 140));
+
+        b8.setBackground(new java.awt.Color(245, 245, 245));
+        b8.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
+        b8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b8ActionPerformed(evt);
+            }
+        });
+        bgTictac.add(b8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 140, 140));
 
         b6.setBackground(new java.awt.Color(245, 245, 245));
         b6.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
@@ -830,28 +836,20 @@ public class TTT extends javax.swing.JFrame {
                 b6ActionPerformed(evt);
             }
         });
-        getContentPane().add(b6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 160, 160));
+        bgTictac.add(b6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 140, 140));
 
-        jblPlayerX.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jblPlayerX.setText("0");
-        getContentPane().add(jblPlayerX, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 220, 66, 62));
+        getContentPane().add(bgTictac, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 540));
 
-        jblPlayerO.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jblPlayerO.setText("0");
-        getContentPane().add(jblPlayerO, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 270, 66, 62));
-
-        jButton1.setBackground(new java.awt.Color(204, 204, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 102, 102));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 153, 51));
         jButton1.setText("RESET SCORE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 110, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 370, 130, 40));
 
-        jButton2.setBackground(new java.awt.Color(204, 204, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 102, 102));
         jButton2.setText("MENU");
@@ -860,10 +858,9 @@ public class TTT extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 104, 44));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, 104, 44));
 
-        jButton3.setBackground(new java.awt.Color(204, 204, 255));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 102, 102));
         jButton3.setText("EXIT");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -871,13 +868,8 @@ public class TTT extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 110, 44));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 500, 100, 30));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setText("PLAYER O:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, -1, 45));
-
-        jButton4.setBackground(new java.awt.Color(204, 204, 255));
         jButton4.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 102, 102));
         jButton4.setText("RESET");
@@ -886,16 +878,10 @@ public class TTT extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 104, 44));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 104, 44));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("O LIFE: ");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 70, 50));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel6.setText("PLAYER X:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, -1, 45));
-
+        jButton5.setBackground(new java.awt.Color(255, 204, 255));
+        jButton5.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         jButton5.setText("SPIN");
         jButton5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -907,32 +893,96 @@ public class TTT extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, 130, 40));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setText("               SPIN!");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, 180, 50));
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setText("100");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 90, 50, 50));
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel9.setText("X LIFE: ");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 70, 50));
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel10.setText("100");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 50, 50));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("SPIN!");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, 290, 50));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("SET MAX SCORE: ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 130, 30));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 460, 40, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 430, 130, 30));
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 420, 40, 30));
+
+        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setLayout(null);
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel9.setText("X LIFE: ");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(40, 0, 101, 50);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel5.setText("O LIFE: ");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(280, 0, 120, 50);
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("100");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(380, 0, 50, 50);
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("100");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(140, 0, 50, 50);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, 460, 50));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.setLayout(null);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel6.setText("PLAYER X:");
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(10, 10, 173, 45);
+
+        jblPlayerX.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
+        jblPlayerX.setForeground(new java.awt.Color(255, 0, 0));
+        jblPlayerX.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jblPlayerX.setText("0");
+        jblPlayerX.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanel2.add(jblPlayerX);
+        jblPlayerX.setBounds(220, 12, 60, 50);
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 300, 70));
+
+        jPanel3.setLayout(null);
+
+        jblPlayerO.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
+        jblPlayerO.setForeground(new java.awt.Color(0, 0, 255));
+        jblPlayerO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jblPlayerO.setText("0");
+        jblPlayerO.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanel3.add(jblPlayerO);
+        jblPlayerO.setBounds(220, 10, 60, 50);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel4.setText("PLAYER O:");
+        jPanel3.add(jLabel4);
+        jLabel4.setBounds(10, 10, 177, 45);
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 300, 70));
 
         background.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 510));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 560));
 
         pack();
         setLocationRelativeTo(null);
@@ -1122,6 +1172,10 @@ public class TTT extends javax.swing.JFrame {
       // TODO add your handling code here:
     }//GEN-LAST:event_jButton5MouseMoved
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1171,6 +1225,7 @@ public class TTT extends javax.swing.JFrame {
     private javax.swing.JButton b9;
     private javax.swing.JLabel background;
     private javax.swing.JLabel bgPic1;
+    private javax.swing.JPanel bgTictac;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1184,6 +1239,9 @@ public class TTT extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel jblPlayerO;
     private javax.swing.JLabel jblPlayerX;
