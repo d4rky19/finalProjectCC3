@@ -12,7 +12,8 @@ public class FinalProject {
     
 
     /**
-     * @param args the command line arguments
+     *this method creates instance of Menu and will call Menu class.
+     * @param args
      */
     public static void main(String[] args) {
         Menu m = new Menu();

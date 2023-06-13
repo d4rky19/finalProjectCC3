@@ -5,9 +5,21 @@
 package finalproject;
 
 import java.awt.Color;
+import java.awt.HeadlessException;
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
+
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 
 
@@ -16,11 +28,14 @@ import javax.swing.ImageIcon;
  * @author selwyn
  */
 public class Menu extends javax.swing.JFrame {
-
+        String filePath = "BG.wav";
+        
+    
     /**
      * Creates new form Menu
      */
     public Menu() {
+        
         
         initComponents();
         jPanel2.setVisible(false);
@@ -34,6 +49,37 @@ public class Menu extends javax.swing.JFrame {
         Image image2 = icon1.getImage().getScaledInstance(bgMenu2.getWidth(), bgMenu2.getHeight(), Image.SCALE_SMOOTH);
         bgMenu2.setIcon(new ImageIcon(image2));
 
+    }
+    
+    public static void PlayMusic(){
+        try {
+            File musicPath = new File("BG.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+
+    }public static void play2(){
+        try {
+            File musicPath = new File("BG.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
 
     /**
@@ -51,9 +97,9 @@ public class Menu extends javax.swing.JFrame {
         btn3By4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btn3By3 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         bgMenu2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        startBtn1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         startBtn = new javax.swing.JButton();
@@ -66,13 +112,13 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Triangle");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, 130, 40));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("3x3");
@@ -81,6 +127,7 @@ public class Menu extends javax.swing.JFrame {
         btn3By4.setBackground(new java.awt.Color(255, 204, 255));
         btn3By4.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
         btn3By4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/triangle xox.png"))); // NOI18N
+        btn3By4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn3By4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn3By4ActionPerformed(evt);
@@ -88,6 +135,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel2.add(btn3By4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 170, 170));
 
+        jButton3.setBackground(new java.awt.Color(0, 255, 204));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton3.setText("BACK");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -95,17 +143,24 @@ public class Menu extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 90, -1));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 90, -1));
 
         btn3By3.setBackground(new java.awt.Color(255, 204, 255));
         btn3By3.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
         btn3By3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/3x3 xox.png"))); // NOI18N
+        btn3By3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn3By3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn3By3ActionPerformed(evt);
             }
         });
         jPanel2.add(btn3By3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 170, 170));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Choose your TicTacToe Mode!");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 530, 60));
 
         bgMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Desktop - 5.png"))); // NOI18N
         bgMenu2.setText("jLabel2");
@@ -114,26 +169,6 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        startBtn1.setBackground(new java.awt.Color(255, 204, 255));
-        startBtn1.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
-        startBtn1.setText("MECHANICS");
-        startBtn1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        startBtn1.setPreferredSize(new java.awt.Dimension(790, 467));
-        startBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                startBtn1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                startBtn1MouseExited(evt);
-            }
-        });
-        startBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                startBtn1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(startBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 210, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Game Logo.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 500, 240));
@@ -146,7 +181,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 470, 210, 40));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 210, 40));
 
         startBtn.setBackground(new java.awt.Color(255, 204, 255));
         startBtn.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
@@ -177,6 +212,9 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+    *This button brings you to the frame to select the TicTacToe board.
+    */
     private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
        //new NewJFrame().setVisible(true);
        //this.dispose();
@@ -187,79 +225,68 @@ public class Menu extends javax.swing.JFrame {
        setContentPane(jPanel2);
     }//GEN-LAST:event_startBtnActionPerformed
 
+    /**
+    *This button will exit the game / terminate the program.
+    */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(WIDTH);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+    *This button brings you back to the Menu.
+    */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         remove(jPanel2);
        
        setContentPane(jPanel1);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    /**
+    *This method makes the button turn red when mouse is hovered.
+    */
     private void startBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startBtnMouseEntered
         // TODO add your handling code here:
         startBtn.setBackground(Color.RED);
     }//GEN-LAST:event_startBtnMouseEntered
 
+    /**
+    *This method makes the button turn to default color after mouse exited.
+    */
     private void startBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startBtnMouseExited
         // TODO add your handling code here:
          startBtn.setBackground(new Color(255, 204, 255));
     }//GEN-LAST:event_startBtnMouseExited
 
+     /**
+    *This button brings you to the Triangle tictactoe board.
+    */
     private void btn3By4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By4ActionPerformed
         new TRI().setVisible(true);
-        this.dispose();
+        this.dispose();PlayMusic();
     }//GEN-LAST:event_btn3By4ActionPerformed
 
+     /**
+    *This button brings you to the 3x3 tictactoe.
+    */
     private void btn3By3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By3ActionPerformed
+         
         new TTT().setVisible(true);
+         
+        PlayMusic();
         this.dispose();
+        
+        
     }//GEN-LAST:event_btn3By3ActionPerformed
-
-    private void startBtn1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startBtn1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_startBtn1MouseEntered
-
-    private void startBtn1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startBtn1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_startBtn1MouseExited
-
-    private void startBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_startBtn1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Menu().setVisible(true);
+                
             }
         });
     }
@@ -274,9 +301,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton startBtn;
-    private javax.swing.JButton startBtn1;
     // End of variables declaration//GEN-END:variables
 }

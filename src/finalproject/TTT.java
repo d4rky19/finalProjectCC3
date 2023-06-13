@@ -6,7 +6,15 @@ package finalproject;
 
 import java.awt.Color;
 import static java.awt.Color.blue;
+import java.awt.HeadlessException;
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -40,17 +48,19 @@ public class TTT extends javax.swing.JFrame {
     }
     private void gameScore(){
         jblPlayerX.setText(String.valueOf(xCount));
-        jblPlayerO.setText(String.valueOf(oCount));
-           
-
-        
+        jblPlayerO.setText(String.valueOf(oCount)); 
     }
-    
+     /**
+    *This method resets both player's life.
+    */
     private void resetlife(){
         jButton5.setEnabled(false);
         xLife = 100;
         oLife = 100;
     }
+    /**
+    *This method sets maximum score.
+    */
     private void max(){
         
         String max =jTextField1.getText();
@@ -68,6 +78,9 @@ public class TTT extends javax.swing.JFrame {
             oCount = 0;
          }
     }
+     /**
+    *This method X and O prints alternately in the jbutton.
+    */
     private void choosePlayer(){
         if (startGame.equalsIgnoreCase("X")) {
             startGame = "O";
@@ -77,7 +90,12 @@ public class TTT extends javax.swing.JFrame {
         }
         
     }
-    
+     /**
+    *This method will determine player's fate in the roulette whether they will lose health or not.
+    *if value of rand is 1 - -50 health Player X.
+    *if value of rand is 2 - -50 health Player O.
+    *if value of rand is 3 - No effect.
+    */
     private void roll(){
         
          int rand = (int)(Math.random()*4);
@@ -140,6 +158,9 @@ public class TTT extends javax.swing.JFrame {
             
         }
     }
+    /**
+    * This method will determine whether Player X or Player O win the game.
+    **/
     private void winner(){
         
       
@@ -682,6 +703,10 @@ public class TTT extends javax.swing.JFrame {
         }
         buttonClicked = false;
     }
+    /**
+    *this method will reset the buttons to white.
+    * 
+    */
     private void reset(){
         b1.setBackground(Color.white);
         b2.setBackground(Color.white);
@@ -755,6 +780,7 @@ public class TTT extends javax.swing.JFrame {
         getContentPane().add(bgPic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 300, 60));
 
         bgTictac.setBackground(new java.awt.Color(51, 153, 255));
+        bgTictac.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bgTictac.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         b1.setBackground(new java.awt.Color(245, 245, 245));
@@ -899,7 +925,7 @@ public class TTT extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("SPIN!");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, 290, 50));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 290, 50));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -959,7 +985,7 @@ public class TTT extends javax.swing.JFrame {
         jblPlayerX.setText("0");
         jblPlayerX.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel2.add(jblPlayerX);
-        jblPlayerX.setBounds(220, 12, 60, 50);
+        jblPlayerX.setBounds(220, 10, 60, 50);
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 300, 70));
 
@@ -987,7 +1013,10 @@ public class TTT extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+    *this method will add a value of 1 to moveCount when player take turns.
+    * 
+    */
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
         
         moveCount += 1;
@@ -1007,9 +1036,25 @@ public class TTT extends javax.swing.JFrame {
         choosePlayer();
         winner();
         buttonClicked = true;
-       
+       try {
+            File musicPath = new File("hit.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_b1ActionPerformed
 
+    /**
+    *this method makes button changes its color when player O or player X wins.
+    * 
+    */
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
         b2.setBackground(new Color(32, 33, 33));
         moveCount += 1;        b2.setText(startGame);
@@ -1023,9 +1068,25 @@ public class TTT extends javax.swing.JFrame {
              reset();
         }   
         buttonClicked = true;
-         choosePlayer();winner();
+         choosePlayer();winner();try {
+            File musicPath = new File("hit.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_b2ActionPerformed
 
+    /**
+    *this method makes button changes its color when player O or player X wins.
+    * 
+    */
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
  moveCount += 1;       b3.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
@@ -1037,9 +1098,24 @@ public class TTT extends javax.swing.JFrame {
              reset();
         }      
          choosePlayer();
-         winner(); 
+         winner(); try {
+            File musicPath = new File("hit.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_b3ActionPerformed
-
+/**
+    *this method makes button changes its color when player O or player X wins.
+    * 
+    */
     private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
  moveCount += 1;       b4.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
@@ -1050,9 +1126,24 @@ public class TTT extends javax.swing.JFrame {
             b4.setForeground(Color.blue);
              reset();
         }      
-         choosePlayer();winner();
+         choosePlayer();winner();try {
+            File musicPath = new File("hit.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_b4ActionPerformed
-
+/**
+    *this method makes button changes its color when player O or player X wins.
+    * 
+    */
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
  moveCount += 1;       b5.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
@@ -1063,9 +1154,25 @@ public class TTT extends javax.swing.JFrame {
             b5.setForeground(Color.blue);
              reset();
         }      
-         choosePlayer();winner(); 
+         choosePlayer();winner(); try {
+            File musicPath = new File("hit.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_b5ActionPerformed
 
+    /**
+    *this method makes button changes its color when player O or player X wins.
+    * 
+    */
     private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
  moveCount += 1;       b6.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
@@ -1076,9 +1183,25 @@ public class TTT extends javax.swing.JFrame {
             b6.setForeground(Color.blue);
              reset();
         }      
-         choosePlayer();winner(); 
+         choosePlayer();winner(); try {
+            File musicPath = new File("hit.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_b6ActionPerformed
 
+    /**
+    *this method makes button changes its color when player O or player X wins.
+    * 
+    */
     private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
     moveCount += 1;     b7.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
@@ -1089,9 +1212,25 @@ public class TTT extends javax.swing.JFrame {
             b7.setForeground(Color.blue);
              reset();
         }      
-         choosePlayer();winner();
+         choosePlayer();winner();try {
+            File musicPath = new File("hit.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_b7ActionPerformed
 
+    /**
+    *this method makes button changes its color when player O or player X wins.
+    * 
+    */
     private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
    moveCount += 1;    b8.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
@@ -1103,8 +1242,25 @@ public class TTT extends javax.swing.JFrame {
              reset();
         }      
          choosePlayer();winner(); 
+         try {
+            File musicPath = new File("hit.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_b8ActionPerformed
 
+    /**
+    *this method makes button changes its color when player O or player X wins.
+    * 
+    */
     private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
  moveCount += 1;       b9.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
@@ -1115,9 +1271,24 @@ public class TTT extends javax.swing.JFrame {
             b9.setForeground(Color.blue);
              reset();
         }      
-         choosePlayer();winner(); 
+         choosePlayer();winner(); try {
+            File musicPath = new File("hit.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_b9ActionPerformed
-
+    /**
+    *this method resets the player's score
+    * 
+    */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jblPlayerX.setText("0");
         xCount = 0;
@@ -1131,11 +1302,17 @@ public class TTT extends javax.swing.JFrame {
             jLabel7.setText("Spin!");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+    *this method will bring you back to the menu when jButton2 is clicked.
+    */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        new Menu().setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    /**
+    *this method will end the program when jButton2 is clicked.
+    */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        System.exit(WIDTH);  // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -1161,7 +1338,9 @@ public class TTT extends javax.swing.JFrame {
 
             
     }//GEN-LAST:event_jButton4ActionPerformed
-
+    /**
+    *this method will call roll method when jButton5 clicked.
+    */
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
    roll();     
    

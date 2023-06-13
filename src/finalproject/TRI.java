@@ -8,6 +8,13 @@ import java.awt.Color;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import java.io.File;
+import java.io.IOException;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 import javax.swing.JOptionPane;
 
@@ -38,6 +45,10 @@ public class TRI extends javax.swing.JFrame {
         Image image19 = icon19.getImage().getScaledInstance(bg2.getWidth(), bg2.getHeight(), Image.SCALE_SMOOTH);
         bg2.setIcon(new ImageIcon(image19));
     }
+    
+     /**
+    *This method sets maximum score.
+    */
     private void max(){
         
         String max =jTextField1.getText();
@@ -55,16 +66,26 @@ public class TRI extends javax.swing.JFrame {
             oCount = 0;
          }
     }
+    
+     /**
+    *This method prints the player Score.
+    */
     private void gameScore(){
         jblPlayerX.setText(String.valueOf(xCount));
         jblPlayerO.setText(String.valueOf(oCount));
         
     }
+     /**
+    *This method resets both player's life.
+    */
     private void resetlife(){
         xLife = 100;
         oLife = 100;
         jButton5.setEnabled(false);
     }
+     /**
+    *This method X and O prints alternately in the jbutton.
+    */
     private void choosePlayer(){
         if (startGame.equalsIgnoreCase("O")) {
             startGame = "X";
@@ -74,6 +95,12 @@ public class TRI extends javax.swing.JFrame {
         }
         
     }
+     /**
+    *This method will determine player's fate in the roulette whether they will lose health or not.
+    *if value of rand is 1 - -50 health Player X.
+    *if value of rand is 2 - -50 health Player O.
+    *if value of rand is 3 - No effect.
+    */
     private void roll(){
          int rand = (int)(Math.random()*4);
          
@@ -142,6 +169,10 @@ public class TRI extends javax.swing.JFrame {
             
         }
     }
+    
+    /**
+    * This method will determine whether Player X or Player O win the game.
+    **/
     private void winner(){
         String bt1 = b1.getText();
         String bt2 = b2.getText();
@@ -753,6 +784,10 @@ public class TRI extends javax.swing.JFrame {
         }
         
     }
+    /**
+    *this method will reset the buttons to white.
+    * 
+    */
     private void reset(){
         b1.setBackground(Color.white);
         b2.setBackground(Color.white);
