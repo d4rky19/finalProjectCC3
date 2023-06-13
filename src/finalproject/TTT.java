@@ -4,10 +4,14 @@
  */
 package finalproject;
 
+
+import static finalproject.Menu.play2;
 import java.awt.Color;
 import static java.awt.Color.blue;
 import java.awt.HeadlessException;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import javax.sound.sampled.AudioInputStream;
@@ -17,6 +21,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 
@@ -24,18 +29,32 @@ import javax.swing.JOptionPane;
  *
  * @author selwyn
  */
-public class TTT extends javax.swing.JFrame {
+public class TTT extends javax.swing.JFrame implements ActionListener {
     private String startGame = "X";
     private int xCount = 0;
     private int oCount = 0;
     private int moveCount = 0;
     private int xLife = 100;
     private int oLife = 100;
-    private boolean buttonClicked = false;
+    private JButton plb;
+    private JButton pub;
+    private int stop = 1; 
+    private Clip clip;
+    
+    
     /**
      * Creates new form TTT
      */
     public TTT() {
+        
+        pub = new JButton();
+        plb = new JButton();
+        
+        pub.addActionListener(this);
+        plb.addActionListener(this);
+        
+        add(pub);
+        add(plb);
         
         initComponents();
         jButton5.setEnabled(false);
@@ -45,7 +64,10 @@ public class TTT extends javax.swing.JFrame {
         ImageIcon icon1 = (ImageIcon)c;
         Image image2 = icon1.getImage().getScaledInstance(background.getWidth(), background.getHeight(), Image.SCALE_SMOOTH);
         background.setIcon(new ImageIcon(image2));
+    }private void stop(){
+        
     }
+    
     private void gameScore(){
         jblPlayerX.setText(String.valueOf(xCount));
         jblPlayerO.setText(String.valueOf(oCount)); 
@@ -57,6 +79,7 @@ public class TTT extends javax.swing.JFrame {
         jButton5.setEnabled(false);
         xLife = 100;
         oLife = 100;
+        
     }
     /**
     *This method sets maximum score.
@@ -89,7 +112,50 @@ public class TTT extends javax.swing.JFrame {
             startGame = "X";
         }
         
-    }
+    }private void boom(){
+        try {
+            File musicPath = new File("boom.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+                
+                
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }private void PlayMusic(){
+      
+       try {
+            File musicPath = new File("BG.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+             
+                
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
+        
+    } 
+    
+        
+
+        // Add buttons to the JFrame and set layout as needed
+
+
      /**
     *This method will determine player's fate in the roulette whether they will lose health or not.
     *if value of rand is 1 - -50 health Player X.
@@ -163,7 +229,7 @@ public class TTT extends javax.swing.JFrame {
     **/
     private void winner(){
         
-      
+     
         String bt1 = b1.getText();
         String bt2 = b2.getText();
         String bt3 = b3.getText();
@@ -177,7 +243,7 @@ public class TTT extends javax.swing.JFrame {
         
        
         if (bt1.equals("X") && bt2.equals("X") && bt3.equals("X")) {
-            bgPic1.setText("X WINS!");
+            bgPic1.setText("X WINS!");boom();
             xCount++; max();
             gameScore();
             b1.setText("");
@@ -195,7 +261,7 @@ public class TTT extends javax.swing.JFrame {
             moveCount = 0;
             resetlife();
         }else if (moveCount ==9){
-            bgPic1.setText("DRAW!");
+            bgPic1.setText("DRAW!");boom();
             b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -213,7 +279,7 @@ public class TTT extends javax.swing.JFrame {
         }
         
         if(bt4.equals("X") && bt5.equals("X") && bt6.equals("X")){
-             bgPic1.setText("X WINS!");
+             bgPic1.setText("X WINS!");boom();
             xCount++; max();
             gameScore();
             b1.setText("");
@@ -229,7 +295,7 @@ public class TTT extends javax.swing.JFrame {
             b5.setBackground(Color.red);
             b6.setBackground(Color.red);
             moveCount = 0;resetlife();
-        }else if (moveCount ==9){
+        }else if (moveCount ==9){boom();
             bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -244,7 +310,7 @@ public class TTT extends javax.swing.JFrame {
            }
         if(bt7.equals("X") && bt8.equals("X") && bt9.equals("X")){
              bgPic1.setText("X WINS!");
-            xCount++; max();
+            xCount++; max();boom();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -260,7 +326,7 @@ public class TTT extends javax.swing.JFrame {
             b8.setBackground(Color.red);
             b9.setBackground(Color.red);
         }else if (moveCount ==9){
-            bgPic1.setText("DRAW!");
+            bgPic1.setText("DRAW!");boom();
             b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -278,7 +344,7 @@ public class TTT extends javax.swing.JFrame {
         if(bt1.equals("X") && bt4.equals("X") && bt7.equals("X")){
              bgPic1.setText("X WINS!");
             xCount++; max();
-            gameScore();
+            gameScore();boom();
             b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -293,7 +359,7 @@ public class TTT extends javax.swing.JFrame {
             b7.setBackground(Color.red);
             moveCount = 0;resetlife();
         }else if (moveCount ==9){
-           bgPic1.setText("DRAW!");
+           bgPic1.setText("DRAW!");boom();
             b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -311,7 +377,7 @@ public class TTT extends javax.swing.JFrame {
         if(bt2.equals("X") && bt5.equals("X") && bt8.equals("X")){
              bgPic1.setText("X WINS!");
             xCount++; max();
-            gameScore();
+            gameScore();boom();
             b1.setText("");
             b2.setText("X");
             b3.setText("");
@@ -325,7 +391,7 @@ public class TTT extends javax.swing.JFrame {
             b5.setBackground(Color.red);
             b8.setBackground(Color.red);
             moveCount = 0;resetlife();
-        }else if (moveCount ==9){
+        }else if (moveCount ==9){boom();
            bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -344,7 +410,7 @@ public class TTT extends javax.swing.JFrame {
         if(bt3.equals("X") && bt6.equals("X") && bt9.equals("X")){
              bgPic1.setText("X WINS!");
             xCount++; max();
-            gameScore();
+            gameScore();boom();
             b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -358,7 +424,7 @@ public class TTT extends javax.swing.JFrame {
             b6.setBackground(Color.red);
             b9.setBackground(Color.red);
             moveCount = 0;resetlife();
-        }else if (moveCount ==9){
+        }else if (moveCount ==9){boom();
             bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -376,7 +442,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt1.equals("X") && bt5.equals("X") && bt9.equals("X")){
             bgPic1.setText("X WINS!");
-            xCount++; max();
+            xCount++; max();boom();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -391,7 +457,7 @@ public class TTT extends javax.swing.JFrame {
             b5.setBackground(Color.red);
             b9.setBackground(Color.red);
             moveCount = 0;resetlife();
-        }else if (moveCount ==9){
+        }else if (moveCount ==9){boom();
             bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -410,7 +476,7 @@ public class TTT extends javax.swing.JFrame {
         if(bt3.equals("X") && bt5.equals("X") && bt7.equals("X")){
             bgPic1.setText("X WINS!");
             xCount++; max();
-            gameScore();
+            gameScore();boom();
             b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -424,7 +490,7 @@ public class TTT extends javax.swing.JFrame {
             b5.setBackground(Color.red);
             b7.setBackground(Color.red);
             moveCount = 0;resetlife();
-        }else if (moveCount ==9){
+        }else if (moveCount ==9){boom();
            bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -443,7 +509,7 @@ public class TTT extends javax.swing.JFrame {
         if (bt1.equals("O") && bt2.equals("O") && bt3.equals("O")) {
             bgPic1.setText("O WINS!");
             oCount++; max();
-            gameScore();
+            gameScore();boom();
             b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -458,7 +524,7 @@ public class TTT extends javax.swing.JFrame {
             b3.setBackground(Color.blue);
             moveCount = 0;
             resetlife();
-        } else if (moveCount ==9){
+        } else if (moveCount ==9){boom();
             bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -476,7 +542,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt4.equals("O") && bt5.equals("O") && bt6.equals("O")){
             bgPic1.setText("O WINS!");
-            oCount++; max();
+            oCount++; max();boom();
             gameScore();
             
             b1.setText("");
@@ -492,7 +558,7 @@ public class TTT extends javax.swing.JFrame {
             b5.setBackground(Color.blue);
             b6.setBackground(Color.blue);
             moveCount = 0;resetlife();
-        }else if (moveCount ==9){
+        }else if (moveCount ==9){boom();
            bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -510,7 +576,7 @@ public class TTT extends javax.swing.JFrame {
         
         }
         if(bt7.equals("O") && bt8.equals("O") && bt9.equals("O")){
-            bgPic1.setText("O WINS!");
+            bgPic1.setText("O WINS!");boom();
             oCount++; max();
             gameScore();b1.setText("");
             b2.setText("");
@@ -526,7 +592,7 @@ public class TTT extends javax.swing.JFrame {
             b9.setBackground(Color.blue);
             
             moveCount = 0;resetlife();
-        }else if (moveCount ==9){
+        }else if (moveCount ==9){boom();
             bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -543,7 +609,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt1.equals("O") && bt4.equals("O") && bt7.equals("O")){
             bgPic1.setText("O WINS!");
-            oCount++; max();
+            oCount++; max();boom();
             gameScore();b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -557,7 +623,7 @@ public class TTT extends javax.swing.JFrame {
             b4.setBackground(Color.blue);
             b7.setBackground(Color.blue);
             moveCount = 0;resetlife();
-        }else if (moveCount ==9){
+        }else if (moveCount ==9){boom();
             bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -574,7 +640,7 @@ public class TTT extends javax.swing.JFrame {
         
         }
         if(bt2.equals("O") && bt5.equals("O") && bt8.equals("O")){
-            bgPic1.setText("O WINS!");
+            bgPic1.setText("O WINS!");boom();
             oCount++; max();
             gameScore();b1.setText("");
             b2.setText("");
@@ -589,7 +655,7 @@ public class TTT extends javax.swing.JFrame {
             b5.setBackground(Color.blue);
             b8.setBackground(Color.blue);
             moveCount = 0;resetlife();
-        }else if (moveCount ==9){
+        }else if (moveCount ==9){boom();
             bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -605,7 +671,7 @@ public class TTT extends javax.swing.JFrame {
         
         }
         if(bt3.equals("O") && bt6.equals("O") && bt9.equals("O")){
-            bgPic1.setText("O WINS!");
+            bgPic1.setText("O WINS!");boom();
             oCount++; max();
             gameScore();b1.setText("");
             b2.setText("");
@@ -621,7 +687,7 @@ public class TTT extends javax.swing.JFrame {
             b9.setBackground(Color.blue);
             moveCount = 0;resetlife();
         }else if (moveCount ==9){
-           
+           boom();
             bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -638,7 +704,7 @@ public class TTT extends javax.swing.JFrame {
         
         }
         if(bt1.equals("O") && bt5.equals("O") && bt9.equals("O")){
-            bgPic1.setText("O WINS!");
+            bgPic1.setText("O WINS!");boom();
             oCount++; max();
             gameScore();b1.setText("");
             b2.setText("");
@@ -653,7 +719,7 @@ public class TTT extends javax.swing.JFrame {
             b5.setBackground(Color.blue);
             b9.setBackground(Color.blue);
             moveCount = 0;resetlife();
-        }else if (moveCount ==9){
+        }else if (moveCount ==9){boom();
            bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -670,7 +736,7 @@ public class TTT extends javax.swing.JFrame {
         }
         if(bt3.equals("O") && bt5.equals("O") && bt7.equals("O")){
            bgPic1.setText("O WINS!");
-            oCount++; max();
+            oCount++; max();boom();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -686,7 +752,7 @@ public class TTT extends javax.swing.JFrame {
             b5.setBackground(Color.blue);
             b7.setBackground(Color.blue);
             moveCount = 0;resetlife();
-        }else if (moveCount ==9){
+        }else if (moveCount ==9){boom();
            bgPic1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
@@ -701,7 +767,7 @@ public class TTT extends javax.swing.JFrame {
             
         
         }
-        buttonClicked = false;
+        
     }
     /**
     *this method will reset the buttons to white.
@@ -738,6 +804,7 @@ public class TTT extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton6 = new javax.swing.JButton();
         bgPic1 = new javax.swing.JLabel();
         bgTictac = new javax.swing.JPanel();
         b1 = new javax.swing.JButton();
@@ -773,6 +840,15 @@ public class TTT extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(960, 575));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton6.setText("MUSIC");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 490, 70, 30));
 
         bgPic1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         bgPic1.setForeground(new java.awt.Color(255, 102, 102));
@@ -977,7 +1053,7 @@ public class TTT extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setText("PLAYER X:");
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(10, 10, 173, 45);
+        jLabel6.setBounds(10, 10, 174, 45);
 
         jblPlayerX.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
         jblPlayerX.setForeground(new java.awt.Color(255, 0, 0));
@@ -1035,7 +1111,7 @@ public class TTT extends javax.swing.JFrame {
         
         choosePlayer();
         winner();
-        buttonClicked = true;
+        
        try {
             File musicPath = new File("hit.wav");
             if (musicPath.exists()) {
@@ -1067,7 +1143,7 @@ public class TTT extends javax.swing.JFrame {
             b2.setForeground(Color.blue);
              reset();
         }   
-        buttonClicked = true;
+       
          choosePlayer();winner();try {
             File musicPath = new File("hit.wav");
             if (musicPath.exists()) {
@@ -1304,10 +1380,11 @@ public class TTT extends javax.swing.JFrame {
 
     /**
     *this method will bring you back to the menu when jButton2 is clicked.
-    */
+    */   
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       new Menu().setVisible(true);
-       this.dispose();
+        stop -=1;
+        new Menu().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -1342,7 +1419,7 @@ public class TTT extends javax.swing.JFrame {
     *this method will call roll method when jButton5 clicked.
     */
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-   roll();     
+       roll();     
    
         
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -1354,6 +1431,16 @@ public class TTT extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        stop -=1;
+        if (stop == 0) {
+            jButton6.setEnabled(false);
+            
+        } else {
+        }
+        PlayMusic();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1406,10 +1493,11 @@ public class TTT extends javax.swing.JFrame {
     private javax.swing.JLabel bgPic1;
     private javax.swing.JPanel bgTictac;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel4;
@@ -1425,4 +1513,9 @@ public class TTT extends javax.swing.JFrame {
     private javax.swing.JLabel jblPlayerO;
     private javax.swing.JLabel jblPlayerX;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
