@@ -847,12 +847,12 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         jblPlayerX = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
         jblPlayerO = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -959,18 +959,19 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 370, 130, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 390, 130, 40));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 102, 102));
+        jButton2.setBackground(new java.awt.Color(51, 255, 204));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setText("MENU");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, 104, 44));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 500, 130, 30));
 
+        jButton3.setBackground(new java.awt.Color(0, 255, 204));
         jButton3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 102, 102));
         jButton3.setText("EXIT");
@@ -981,15 +982,15 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 500, 100, 30));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 102, 102));
-        jButton4.setText("RESET");
+        jButton4.setText("Reset");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 104, 44));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 390, 104, 40));
 
         jButton5.setBackground(new java.awt.Color(255, 204, 255));
         jButton5.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
@@ -1015,14 +1016,14 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("SET MAX SCORE: ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 440, 130, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, 120, 30));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 440, 40, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 450, 40, 30));
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -1040,14 +1041,14 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(280, 0, 120, 50);
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 0));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("100");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(380, 0, 50, 50);
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 0));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("100");
@@ -1056,40 +1057,32 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, 460, 50));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.setLayout(null);
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel6.setText("PLAYER X:");
-        jPanel2.add(jLabel6);
-        jLabel6.setBounds(10, 10, 174, 45);
-
-        jblPlayerX.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
+        jblPlayerX.setFont(new java.awt.Font("Segoe UI", 3, 75)); // NOI18N
         jblPlayerX.setForeground(new java.awt.Color(255, 0, 0));
         jblPlayerX.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jblPlayerX.setText("0");
         jblPlayerX.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jPanel2.add(jblPlayerX);
-        jblPlayerX.setBounds(220, 10, 60, 50);
+        getContentPane().add(jblPlayerX, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, 80, 70));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 300, 70));
-
-        jPanel3.setLayout(null);
-
-        jblPlayerO.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
+        jblPlayerO.setFont(new java.awt.Font("Segoe UI", 3, 65)); // NOI18N
         jblPlayerO.setForeground(new java.awt.Color(0, 0, 255));
         jblPlayerO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jblPlayerO.setText("0");
         jblPlayerO.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jPanel3.add(jblPlayerO);
-        jblPlayerO.setBounds(220, 10, 60, 50);
+        getContentPane().add(jblPlayerO, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 280, 80, 70));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel4.setText("PLAYER O:");
-        jPanel3.add(jLabel4);
-        jLabel4.setBounds(10, 10, 177, 45);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Player xPlayer X.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 150, 40));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 300, 70));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Rectangle 22.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 180, 170));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Player oPlayer O.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 230, 150, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Rectangle 22.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 190, 150));
 
         background.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
@@ -1504,6 +1497,8 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1511,8 +1506,6 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel jblPlayerO;
     private javax.swing.JLabel jblPlayerX;
