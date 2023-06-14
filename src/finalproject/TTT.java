@@ -5,7 +5,7 @@
 package finalproject;
 
 
-import static finalproject.Menu.play2;
+
 import java.awt.Color;
 import static java.awt.Color.blue;
 import java.awt.HeadlessException;
@@ -64,8 +64,6 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
         ImageIcon icon1 = (ImageIcon)c;
         Image image2 = icon1.getImage().getScaledInstance(background.getWidth(), background.getHeight(), Image.SCALE_SMOOTH);
         background.setIcon(new ImageIcon(image2));
-    }private void stop(){
-        
     }
     
     private void gameScore(){
@@ -79,22 +77,43 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
         jButton5.setEnabled(false);
         xLife = 100;
         oLife = 100;
+        jLabel10.setText("100");
+         jLabel8.setText("100");
         
+    }private void win(){
+        try {
+            File musicPath = new File("win.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+                
+                
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
     /**
     *This method sets maximum score.
     */
     private void max(){
         
+        
         String max =jTextField1.getText();
         String x = String.valueOf(xCount);
         String y = String.valueOf(oCount);
-        if(max.equals(x)){
+        if(max.equals(x)){win();
             JOptionPane.showMessageDialog(null, "X WINS!");
             jblPlayerX.setText("0");jblPlayerO.setText("0");
             xCount = 0;
             oCount = 0;
-         }else if (max.equals(y)){
+            
+         }else if (max.equals(y)){win();
               JOptionPane.showMessageDialog(null, "O WINS!");
               jblPlayerX.setText("0");jblPlayerO.setText("0");
               xCount = 0;
@@ -804,7 +823,6 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton6 = new javax.swing.JButton();
         bgPic1 = new javax.swing.JLabel();
         bgTictac = new javax.swing.JPanel();
         b1 = new javax.swing.JButton();
@@ -840,15 +858,6 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(960, 575));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton6.setText("MUSIC");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 490, 70, 30));
 
         bgPic1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         bgPic1.setForeground(new java.awt.Color(255, 102, 102));
@@ -1006,14 +1015,14 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("SET MAX SCORE: ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 430, 130, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 440, 130, 30));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 420, 40, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 440, 40, 30));
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -1391,7 +1400,13 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
     *this method will end the program when jButton2 is clicked.
     */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       System.exit(WIDTH);  // TODO add your handling code here:
+       String[] yn = {"YES","NO"};
+      int choice = JOptionPane.showOptionDialog(null, "Confirm Exit?", null, JOptionPane.YES_NO_OPTION, HEIGHT, null, yn, EXIT_ON_CLOSE);
+        if (choice == 0) {
+            System.exit(WIDTH);
+            
+        } else {
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -1431,16 +1446,6 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        stop -=1;
-        if (stop == 0) {
-            jButton6.setEnabled(false);
-            
-        } else {
-        }
-        PlayMusic();
-    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1497,7 +1502,6 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel4;

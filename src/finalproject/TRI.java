@@ -5,6 +5,7 @@
 package finalproject;
 
 import java.awt.Color;
+import java.awt.HeadlessException;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -54,12 +55,12 @@ public class TRI extends javax.swing.JFrame {
         String max =jTextField1.getText();
         String x = String.valueOf(xCount);
         String y = String.valueOf(oCount);
-        if(max.equals(x)){
+        if(max.equals(x)){win();
             JOptionPane.showMessageDialog(null, "X WINS!");
             jblPlayerX.setText("0");jblPlayerO.setText("0");
             xCount = 0;
             oCount = 0;
-         }else if (max.equals(y)){
+         }else if (max.equals(y)){win();
               JOptionPane.showMessageDialog(null, "O WINS!");
               jblPlayerX.setText("0");jblPlayerO.setText("0");
               xCount = 0;
@@ -82,6 +83,26 @@ public class TRI extends javax.swing.JFrame {
         xLife = 100;
         oLife = 100;
         jButton5.setEnabled(false);
+        jLabel10.setText("100");
+         jLabel8.setText("100");
+    }
+    private void win(){
+        try {
+            File musicPath = new File("win.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+                
+                
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
      /**
     *This method X and O prints alternately in the jbutton.
@@ -1255,7 +1276,13 @@ public class TRI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       System.exit(WIDTH);  // TODO add your handling code here:
+       String[] yn = {"YES","NO"};
+      int choice = JOptionPane.showOptionDialog(null, "Confirm Exit?", null, JOptionPane.YES_NO_OPTION, HEIGHT, null, yn, EXIT_ON_CLOSE);
+        if (choice == 0) {
+            System.exit(WIDTH);
+            
+        } else {
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

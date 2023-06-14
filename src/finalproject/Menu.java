@@ -50,18 +50,17 @@ public class Menu extends javax.swing.JFrame {
         Image image2 = icon1.getImage().getScaledInstance(bgMenu2.getWidth(), bgMenu2.getHeight(), Image.SCALE_SMOOTH);
         bgMenu2.setIcon(new ImageIcon(image2));
 
-    }
-    
-    public static void play2(){
-            
+    }private void cl(){
         try {
-            File musicPath = new File("BG.wav");
+            File musicPath = new File("cl.wav");
             if (musicPath.exists()) {
                 AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
                 Clip clip = AudioSystem.getClip();
                 clip.open(audioInput);
-                clip.loop(Clip.LOOP_CONTINUOUSLY);
                 clip.start();
+                
+                
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Can't find the music file");
             }
@@ -69,6 +68,8 @@ public class Menu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -217,7 +218,13 @@ public class Menu extends javax.swing.JFrame {
     *This button will exit the game / terminate the program.
     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.exit(WIDTH);
+       String[] yn = {"YES","NO"};
+      int choice = JOptionPane.showOptionDialog(null, "Confirm Exit?", null, JOptionPane.YES_NO_OPTION, HEIGHT, null, yn, EXIT_ON_CLOSE);
+        if (choice == 0) {
+            System.exit(WIDTH);
+            
+        } else {
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -249,7 +256,8 @@ public class Menu extends javax.swing.JFrame {
     *This button brings you to the Triangle tictactoe board.
     */
     private void btn3By4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By4ActionPerformed
-        new TRI().setVisible(true);
+       cl();        
+       new TRI().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn3By4ActionPerformed
 
@@ -257,7 +265,7 @@ public class Menu extends javax.swing.JFrame {
     *This button brings you to the 3x3 tictactoe.
     */
     private void btn3By3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By3ActionPerformed
-         
+         cl();
         new TTT().setVisible(true);
          
         
