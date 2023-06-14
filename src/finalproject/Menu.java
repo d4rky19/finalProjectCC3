@@ -37,7 +37,6 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         
         
-      
         initComponents();
         jPanel2.setVisible(false);
         Icon a = bgMenu.getIcon();
@@ -52,15 +51,28 @@ public class Menu extends javax.swing.JFrame {
 
     }
     
-    public static void play2(){
-            
+    public static void PlayMusic(){
         try {
             File musicPath = new File("BG.wav");
             if (musicPath.exists()) {
                 AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
                 Clip clip = AudioSystem.getClip();
                 clip.open(audioInput);
-                clip.loop(Clip.LOOP_CONTINUOUSLY);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+
+    }public static void play2(){
+        try {
+            File musicPath = new File("BG.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
                 clip.start();
             } else {
                 JOptionPane.showMessageDialog(null, "Can't find the music file");
@@ -250,7 +262,7 @@ public class Menu extends javax.swing.JFrame {
     */
     private void btn3By4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By4ActionPerformed
         new TRI().setVisible(true);
-        this.dispose();
+        this.dispose();PlayMusic();
     }//GEN-LAST:event_btn3By4ActionPerformed
 
      /**
@@ -260,7 +272,7 @@ public class Menu extends javax.swing.JFrame {
          
         new TTT().setVisible(true);
          
-        
+        PlayMusic();
         this.dispose();
         
         
