@@ -66,6 +66,20 @@ public class TRI extends javax.swing.JFrame {
               xCount = 0;
             oCount = 0;
          }
+    }private void hit(){
+        try {
+            File musicPath = new File("hit.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
     
      /**
@@ -103,7 +117,23 @@ public class TRI extends javax.swing.JFrame {
         } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
-    }
+    }private void boom(){
+        try {
+            File musicPath = new File("boom.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+                
+                
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }}
      /**
     *This method X and O prints alternately in the jbutton.
     */
@@ -146,7 +176,7 @@ public class TRI extends javax.swing.JFrame {
          
          if (xLife==0) {
              reset();max();
-            int xx = oCount+=1;
+            int xx = oCount+=1;boom();
             jblPlayerO.setText(String.valueOf(xx));
             jLabel1.setText("O WINS!");
             jLabel1.setForeground(Color.green);
@@ -168,7 +198,7 @@ public class TRI extends javax.swing.JFrame {
             
             
         } else if (oLife ==0) {
-            reset();max();
+            reset();max();boom();
             int yy =xCount+= 1;
             jblPlayerX.setText(String.valueOf(yy));
             jLabel1.setForeground(Color.green);
@@ -211,7 +241,7 @@ public class TRI extends javax.swing.JFrame {
         if (bt1.equals("X") && bt2.equals("X") && bt4.equals("X")) {
             jLabel1.setForeground(Color.green);
             jLabel1.setText("X WINS!");
-            xCount++;max();
+            xCount++;max();boom();
             gameScore();
             b1.setText("X");
             b2.setText("X");
@@ -228,7 +258,7 @@ public class TRI extends javax.swing.JFrame {
             b4.setBackground(Color.red);
             moveCount = 0;
             resetlife();
-        }else if (moveCount ==10){
+        }else if (moveCount ==10){boom();
             jLabel1.setForeground(Color.yellow);
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -250,7 +280,7 @@ public class TRI extends javax.swing.JFrame {
         if(bt1.equals("X") && bt3.equals("X") && bt6.equals("X")){
             jLabel1.setForeground(Color.green);
              jLabel1.setText("X WINS!");
-            xCount++;max();
+            xCount++;max();boom();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -265,7 +295,7 @@ public class TRI extends javax.swing.JFrame {
             b3.setBackground(Color.red);
             b6.setBackground(Color.red);
             moveCount = 0;resetlife();
-        }else if (moveCount ==10){
+        }else if (moveCount ==10){boom();
             jLabel1.setForeground(Color.yellow);
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -281,7 +311,7 @@ public class TRI extends javax.swing.JFrame {
             moveCount = 0;resetlife();
            }
         if(bt4.equals("X") && bt5.equals("X") && bt6.equals("X")){
-            jLabel1.setForeground(Color.green);
+            jLabel1.setForeground(Color.green);boom();
              jLabel1.setText("X WINS!");
             xCount++;max();
             gameScore();
@@ -298,7 +328,7 @@ public class TRI extends javax.swing.JFrame {
             b4.setBackground(Color.red);
             b5.setBackground(Color.red);
             b6.setBackground(Color.red);
-        }else if (moveCount ==10){
+        }else if (moveCount ==10){boom();
             jLabel1.setForeground(Color.yellow);
             jLabel1.setText("DRAW!");
             b1.setText("");
@@ -317,7 +347,7 @@ public class TRI extends javax.swing.JFrame {
         }
         if(bt2.equals("X") && bt4.equals("X") && bt7.equals("X")){
             jLabel1.setForeground(Color.green);
-             jLabel1.setText("X WINS!");
+             jLabel1.setText("X WINS!");boom();
             xCount++;max();
             gameScore();
             b1.setText("");
@@ -333,7 +363,7 @@ public class TRI extends javax.swing.JFrame {
             b4.setBackground(Color.red);
             b7.setBackground(Color.red);
             moveCount = 0;resetlife();
-        }else if (moveCount ==10){
+        }else if (moveCount ==10){boom();
             jLabel1.setForeground(Color.yellow);
            jLabel1.setText("DRAW!");
             b1.setText("");
@@ -352,7 +382,7 @@ public class TRI extends javax.swing.JFrame {
         }
         if(bt7.equals("X") && bt8.equals("X") && bt9.equals("X")){
             jLabel1.setForeground(Color.green);
-             jLabel1.setText("X WINS!");
+             jLabel1.setText("X WINS!");boom();
             xCount++;max();
             gameScore();
             b1.setText("");
@@ -371,7 +401,7 @@ public class TRI extends javax.swing.JFrame {
         }else if (moveCount ==10){
             jLabel1.setForeground(Color.yellow);
            jLabel1.setText("DRAW!");
-            b1.setText("");
+            b1.setText("");boom();
             b2.setText("");
             b3.setText("");
             b4.setText(""); 
@@ -387,7 +417,7 @@ public class TRI extends javax.swing.JFrame {
         }
         if(bt8.equals("X") && bt9.equals("X") && bt10.equals("X")){
             jLabel1.setForeground(Color.green);
-             jLabel1.setText("X WINS!");
+             jLabel1.setText("X WINS!");boom();
             xCount++;max();
             gameScore();
             b1.setText("");
@@ -406,7 +436,7 @@ public class TRI extends javax.swing.JFrame {
         }else if (moveCount ==10){
             jLabel1.setForeground(Color.yellow);
             jLabel1.setText("DRAW!");
-            b1.setText("");
+            b1.setText("");boom();
             b2.setText("");
             b3.setText("");
             b4.setText(""); 
@@ -424,7 +454,7 @@ public class TRI extends javax.swing.JFrame {
             jLabel1.setForeground(Color.green);
             jLabel1.setText("X WINS!");
             xCount++;max();
-            gameScore();
+            gameScore();boom();
             b1.setText("");
             b2.setText("");
             b3.setText("");
@@ -444,7 +474,7 @@ public class TRI extends javax.swing.JFrame {
             b1.setText("");
             b2.setText("");
             b3.setText("");
-            b4.setText(""); 
+            b4.setText(""); boom();
             b5.setText(""); 
             b6.setText("");
             b7.setText("");
@@ -461,7 +491,7 @@ public class TRI extends javax.swing.JFrame {
             xCount++;max();
             gameScore();
             b1.setText("");
-            b2.setText("");
+            b2.setText("");boom();
             b3.setText("");
             b4.setText(""); 
             b5.setText(""); 
@@ -479,7 +509,7 @@ public class TRI extends javax.swing.JFrame {
             b1.setText("");
             b2.setText("");
             b3.setText("");
-            b4.setText(""); 
+            b4.setText(""); boom();
             b5.setText(""); 
             b6.setText("");
             b7.setText("");
@@ -497,7 +527,7 @@ public class TRI extends javax.swing.JFrame {
             gameScore();
             b1.setText("");
             b2.setText("");
-            b3.setText("");
+            b3.setText("");boom();
             b4.setText(""); 
             b5.setText(""); 
             b6.setText("");
@@ -514,7 +544,7 @@ public class TRI extends javax.swing.JFrame {
             jLabel1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
-            b3.setText("");
+            b3.setText("");boom();
             b4.setText(""); 
             b5.setText(""); 
             b6.setText("");
@@ -532,7 +562,7 @@ public class TRI extends javax.swing.JFrame {
             oCount++;max();
             gameScore();b1.setText("");
             b2.setText("");
-            b3.setText("");
+            b3.setText("");boom();
             b4.setText(""); 
             b5.setText(""); 
             b6.setText("");
@@ -547,7 +577,7 @@ public class TRI extends javax.swing.JFrame {
             jLabel1.setForeground(Color.yellow);
            jLabel1.setText("DRAW!");
             b1.setText("");
-            b2.setText("");
+            b2.setText("");boom();
             b3.setText("");
             b4.setText(""); 
             b5.setText(""); 
@@ -567,7 +597,7 @@ public class TRI extends javax.swing.JFrame {
             oCount++;max();
             gameScore();b1.setText("");
             b2.setText("");
-            b3.setText("");
+            b3.setText("");boom();
             b4.setText(""); 
             b5.setText(""); 
             b6.setText("");
@@ -584,7 +614,7 @@ public class TRI extends javax.swing.JFrame {
             jLabel1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
-            b3.setText("");
+            b3.setText("");boom();
             b4.setText(""); 
             b5.setText(""); 
             b6.setText("");
@@ -601,7 +631,7 @@ public class TRI extends javax.swing.JFrame {
             oCount++;max();
             gameScore();b1.setText("");
             b2.setText("");
-            b3.setText("");
+            b3.setText("");boom();
             b4.setText(""); 
             b5.setText(""); 
             b6.setText("");
@@ -617,7 +647,7 @@ public class TRI extends javax.swing.JFrame {
             jLabel1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
-            b3.setText("");
+            b3.setText("");boom();
             b4.setText(""); 
             b5.setText(""); 
             b6.setText("");
@@ -635,7 +665,7 @@ public class TRI extends javax.swing.JFrame {
             oCount++;max();
             gameScore();b1.setText("");
             b2.setText("");
-            b3.setText("");
+            b3.setText("");boom();
             b4.setText(""); 
             b5.setText(""); 
             b6.setText("");
@@ -652,7 +682,7 @@ public class TRI extends javax.swing.JFrame {
             b1.setText("");
             b2.setText("");
             b3.setText("");
-            b4.setText(""); 
+            b4.setText(""); boom();
             b5.setText(""); 
             b6.setText("");
             b7.setText("");
@@ -670,7 +700,7 @@ public class TRI extends javax.swing.JFrame {
             b2.setText("");
             b3.setText("");
             b4.setText(""); 
-            b5.setText(""); 
+            b5.setText(""); boom();
             b6.setText("");
             b7.setText("");
             b8.setText(""); 
@@ -685,7 +715,7 @@ public class TRI extends javax.swing.JFrame {
             b1.setText("");
             b2.setText("");
             b3.setText("");
-            b4.setText(""); 
+            b4.setText(""); boom();
             b5.setText(""); 
             b6.setText("");
             b7.setText("");
@@ -702,7 +732,7 @@ public class TRI extends javax.swing.JFrame {
             oCount++;max();
             gameScore();b1.setText("");
             b2.setText("");
-            b3.setText("");
+            b3.setText("");boom();
             b4.setText(""); 
             b5.setText(""); 
             b6.setText("");
@@ -717,7 +747,7 @@ public class TRI extends javax.swing.JFrame {
             jLabel1.setForeground(Color.yellow);
            jLabel1.setText("DRAW!");
             b1.setText("");
-            b2.setText("");
+            b2.setText("");boom();
             b3.setText("");
             b4.setText(""); 
             b5.setText(""); 
@@ -732,7 +762,7 @@ public class TRI extends javax.swing.JFrame {
         if(bt3.equals("O") && bt5.equals("O") && bt8.equals("O")){
             jLabel1.setForeground(Color.green);
            jLabel1.setText("O WINS!");
-            oCount++;max();
+            oCount++;max();boom();
             gameScore();
             b1.setText("");
             b2.setText("");
@@ -752,7 +782,7 @@ public class TRI extends javax.swing.JFrame {
             jLabel1.setForeground(Color.yellow);
             jLabel1.setText("DRAW!");
             b1.setText("");
-            b2.setText("");
+            b2.setText("");boom();
             b3.setText("");
             b4.setText(""); 
             b5.setText(""); 
@@ -770,7 +800,7 @@ public class TRI extends javax.swing.JFrame {
             oCount++;max();
             gameScore();
             b1.setText("");
-            b2.setText("");
+            b2.setText("");boom();
             b3.setText("");
             b4.setText(""); 
             b5.setText(""); 
@@ -788,7 +818,7 @@ public class TRI extends javax.swing.JFrame {
             jLabel1.setText("DRAW!");
             b1.setText("");
             b2.setText("");
-            b3.setText("");
+            b3.setText("");boom();
             b4.setText(""); 
             b5.setText(""); 
             b6.setText("");
@@ -1125,7 +1155,7 @@ public class TRI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-       
+       hit();
         
         moveCount += 1;
         b1.setText(startGame);
@@ -1146,7 +1176,7 @@ public class TRI extends javax.swing.JFrame {
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
-        
+           hit();
         moveCount += 1;        b2.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b2.setForeground(Color.red);
@@ -1161,7 +1191,7 @@ public class TRI extends javax.swing.JFrame {
     }//GEN-LAST:event_b2ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
-        
+           hit();
         moveCount += 1;       b3.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b3.setForeground(Color.red);
@@ -1180,7 +1210,7 @@ public class TRI extends javax.swing.JFrame {
     }//GEN-LAST:event_b3ActionPerformed
 
     private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
-            moveCount += 1;       b4.setText(startGame);
+           hit();    moveCount += 1;       b4.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b4.setForeground(Color.red);
              reset();
@@ -1193,7 +1223,7 @@ public class TRI extends javax.swing.JFrame {
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
- moveCount += 1;       b5.setText(startGame);
+ moveCount += 1;       b5.setText(startGame);   hit();
         if (startGame.equalsIgnoreCase("X")) {
             b5.setForeground(Color.red);
              reset();
@@ -1206,7 +1236,7 @@ public class TRI extends javax.swing.JFrame {
     }//GEN-LAST:event_b5ActionPerformed
 
     private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
- moveCount += 1;       b6.setText(startGame);
+ moveCount += 1;     hit();     b6.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b6.setForeground(Color.red);
              reset();
@@ -1219,7 +1249,7 @@ public class TRI extends javax.swing.JFrame {
     }//GEN-LAST:event_b6ActionPerformed
 
     private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
-    moveCount += 1;     b7.setText(startGame);
+    moveCount += 1;     hit();   b7.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b7.setForeground(Color.red);
              reset();
@@ -1232,7 +1262,7 @@ public class TRI extends javax.swing.JFrame {
     }//GEN-LAST:event_b7ActionPerformed
 
     private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
-   moveCount += 1;    b8.setText(startGame);
+   moveCount += 1;     hit();  b8.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b8.setForeground(Color.red);
              reset();
@@ -1245,7 +1275,7 @@ public class TRI extends javax.swing.JFrame {
     }//GEN-LAST:event_b8ActionPerformed
 
     private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
- moveCount += 1;       b9.setText(startGame);
+ moveCount += 1;       hit();   b9.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b9.setForeground(Color.red);
              reset();
@@ -1307,7 +1337,7 @@ public class TRI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void b10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b10ActionPerformed
-       moveCount += 1;       b10.setText(startGame);
+       moveCount += 1;    hit();      b10.setText(startGame);
         if (startGame.equalsIgnoreCase("X")) {
             b10.setForeground(Color.red);
              reset();

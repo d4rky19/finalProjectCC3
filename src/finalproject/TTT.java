@@ -202,7 +202,7 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
         }
          
          if (xLife==0) {
-             reset();
+             reset();boom();
             int xx = oCount+=1;
             jblPlayerO.setText(String.valueOf(xx));
             bgPic1.setText("O WINS!");
@@ -223,7 +223,7 @@ public class TTT extends javax.swing.JFrame implements ActionListener {
             
             
         } else if (oLife ==0) {
-            reset();
+            reset();boom();
             int yy =xCount+= 1;
             jblPlayerX.setText(String.valueOf(yy));
             bgPic1.setText("X WINS!");
