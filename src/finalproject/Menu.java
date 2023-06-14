@@ -79,6 +79,11 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        startBtn = new javax.swing.JButton();
+        bgMenu = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -87,16 +92,51 @@ public class Menu extends javax.swing.JFrame {
         btn3By3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         bgMenu2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        startBtn = new javax.swing.JButton();
-        bgMenu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(630, 500));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Game Logo.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 500, 240));
+
+        jButton1.setBackground(new java.awt.Color(255, 204, 255));
+        jButton1.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
+        jButton1.setText("EXIT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 210, 40));
+
+        startBtn.setBackground(new java.awt.Color(255, 204, 255));
+        startBtn.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
+        startBtn.setText("START");
+        startBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        startBtn.setPreferredSize(new java.awt.Dimension(790, 467));
+        startBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                startBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                startBtnMouseExited(evt);
+            }
+        });
+        startBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(startBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 210, 40));
+
+        bgMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Desktop - 5.png"))); // NOI18N
+        jPanel1.add(bgMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 540));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -156,46 +196,6 @@ public class Menu extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Game Logo.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 500, 240));
-
-        jButton1.setBackground(new java.awt.Color(255, 204, 255));
-        jButton1.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
-        jButton1.setText("EXIT");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 210, 40));
-
-        startBtn.setBackground(new java.awt.Color(255, 204, 255));
-        startBtn.setFont(new java.awt.Font("Unispace", 1, 18)); // NOI18N
-        startBtn.setText("START");
-        startBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        startBtn.setPreferredSize(new java.awt.Dimension(790, 467));
-        startBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                startBtnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                startBtnMouseExited(evt);
-            }
-        });
-        startBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                startBtnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(startBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 210, 40));
-
-        bgMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Desktop - 5.png"))); // NOI18N
-        jPanel1.add(bgMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 540));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -217,7 +217,13 @@ public class Menu extends javax.swing.JFrame {
     *This button will exit the game / terminate the program.
     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.exit(WIDTH);
+        String[] choice = {"YES","NO"};
+        int yn = JOptionPane.showOptionDialog(null, "Are you sure you want to exit?", "CONFIRMATION", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,choice,choice);
+        if (yn == 0) {
+            System.exit(WIDTH);
+        } else {
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -249,6 +255,21 @@ public class Menu extends javax.swing.JFrame {
     *This button brings you to the Triangle tictactoe board.
     */
     private void btn3By4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By4ActionPerformed
+         try {
+            File musicPath = new File("lvl.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+               clip.start();
+                 
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
         new TRI().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn3By4ActionPerformed
@@ -257,10 +278,22 @@ public class Menu extends javax.swing.JFrame {
     *This button brings you to the 3x3 tictactoe.
     */
     private void btn3By3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3By3ActionPerformed
-         
-        new TTT().setVisible(true);
-         
+         try {
+            File musicPath = new File("lvl.wav");
+            if (musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Can't find the music file");
+            }
+        } catch (HeadlessException | IOException | LineUnavailableException | UnsupportedAudioFileException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
         
+        new TTT().setVisible(true);
         this.dispose();
         
         
